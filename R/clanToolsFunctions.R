@@ -1,3 +1,8 @@
+#' Extract fitted paarmeters and uncertainties from a fitted lm-model.
+#' @author Claus E. Andersen
+#' @return dataframe with coefficients and uncertainties  
+#' @param fm a fitted model from lm
+#' @export
 coefficients.ca <- function(fm){
   # Created: July 28, 2012
   # Revised: July 28, 2012
@@ -6,6 +11,7 @@ coefficients.ca <- function(fm){
   data.frame(coeff=summary(fm)$coefficients[,1],u.coeff=summary(fm)$coefficients[,2])
 }
 
+#' @export
 first.element <- function(x,na.ignore=T){
   # Library: clan
   # Created: March 22, 2002
@@ -26,6 +32,7 @@ first.element <- function(x,na.ignore=T){
   res
 }
 
+#' @export
 last.element <- function(x,na.ignore=T){
   # Library: clan
   # Created: March 22, 2002
