@@ -4,7 +4,8 @@ Date: 2014-08-03
 Title: R functions of general use for data analysis and presentation
 Author: Claus E. Andersen
 Maintainer: Claus E. Andersen <clan@dtu.dk>
-Description: An R library of functions for general use in data analysis and presentation 
+Description: An R library of functions for general use in data analysis and
+    presentation.
 URL: www.dtu.dk
 Depends:
     R (>= 3.1.1)

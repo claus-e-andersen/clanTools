@@ -662,7 +662,6 @@ thermistor.ohm <- function(degC=25.0, b=c(0*5.21570,0*4294.32,0*310)){
   exp(b[2]/(degC+b[3]) - b[1])
 }
 
-
 #' @title  Template for graphical output 
 #' @description  Template for graphical output using pdf, ps or png format.
 #' # Recommended workflow for making PowerPoint reports:
@@ -732,7 +731,7 @@ clan.install <- function(repos="http://cran.r-project.org"){
   require(chron)
   print("Install important packages.")
   getOption("repos")
-  install.packages("stringr",)
+  install.packages("stringr",repos=repos)
   install.packages("plyr",repos=repos)
   install.packages("gridBase",repos=repos)
   install.packages("gridExtra",repos=repos)
@@ -746,9 +745,9 @@ clan.install <- function(repos="http://cran.r-project.org"){
 
   install_github("clanTools","claus-e-andersen")  
   install_github("clanLattice","claus-e-andersen")
-#  install_github("clanOptim","claus-e-andersen")
-#  install_github("clanEgsnrc","claus-e-andersen")
-#  install_github("clanMEView","claus-e-andersen")
+  install_github("clanOptim","claus-e-andersen")
+  install_github("clanEgsnrc","claus-e-andersen")
+  install_github("clanMEView","claus-e-andersen")
 }
 
 
@@ -770,6 +769,6 @@ clanTools <- function(){
                         "first.element","last.element","most.common.element",
                         "workflow.ca",
                         "dayno.clock","dayno.calc","dayno.clock.reversed",
-                        "thermistor.degC","thermistor.ohm","coefficients.ca"
+                        "thermistor.degC","thermistor.ohm","coefficients.ca","trim.whitespace"
        )))
 }
