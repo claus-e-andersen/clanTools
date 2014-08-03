@@ -16,7 +16,7 @@ A dataframe with coefficients and uncertainties. coeff is the
 fitted values and u.coeff is the accociated uncertainties.
 }
 \description{
-This functions helps get easy access to the uncertainties associated with the fit.
+This function helps get easy access to the uncertainties associated with the fit.
 }
 \author{
 Claus E. Andersen

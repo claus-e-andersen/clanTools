@@ -1,5 +1,5 @@
 #' @title Extract coefficients from a fitted linear model (lm)
-#' @description This functions helps get easy access to the uncertainties associated with the fit.
+#' @description This function helps get easy access to the uncertainties associated with the fit.
 #' @usage 
 #' fm <- lm(x~y, data=df)
 #' cc <- coefficents.ca(fm)
@@ -663,6 +663,113 @@ thermistor.ohm <- function(degC=25.0, b=c(0*5.21570,0*4294.32,0*310)){
 }
 
 
+#' @title  Template for graphical output 
+#' @description  Template for graphical output using pdf, ps or png format.
+#' # Recommended workflow for making PowerPoint reports:
+#' (1) Print all files to consequtive png-files
+#' (2) Import to PowerPoint using the photoalbum feature.
+#'     This puts each plot in separate slides in the presentation.
+#' @usage  Do not run - just view the body of the function and use it as a template.
+#' @name workflow.ca 
+#' @author Claus E. Andersen
+#' @return Side effect is that selected iportant libraries are installed
+#' @export workflow.ca
+workflow.ca <- function(){
+  # This function includes a recommended wrapper for priducing plots
+  # on screen or to files.
+  
+  # This code can be pasted into other scripts whenever needed.
+  # Revised: May 20, 2012 
+  # Claus E. Andersen
+  
+  close.device.wanted <- FALSE
+  
+  # Select some name:
+  plot.file <- "R-plot"
+  
+  if(FALSE){
+    png.fac <- 1.5
+    png(filename = paste(plot.file,"%03d.png",sep=""),
+        width = png.fac*20, height = png.fac*13, units = "cm", pointsize = png.fac*10,
+        bg = "white", res = 600, family = "arial", restoreConsole = TRUE,
+        type = c("windows", "cairo", "cairo-png")[1])
+    close.device.wanted <- TRUE
+  }
+  
+  if(FALSE){
+    inch.fac <- 2.54 / 1.2
+    pdf(paste(plot.file,".pdf",sep=""), width = 29.7/inch.fac, height = 21/inch.fac,pointsize=19,family="Courier")
+    #dev.off()
+    close.device.wanted <- TRUE
+  }
+  
+  if(FALSE){
+    postscript(paste(plot.file,".ps",sep=""),onefile=TRUE) 
+    close.device.wanted <- TRUE
+  }
+  
+  ## Place your plots and other code here
+  plot(1:10)
+  plot(1:100)
+  
+  # Close device - if plotting to files
+  if(close.device.wanted) dev.off()
+}# workflow.ca
 
 
+#' @title  Function to ease the installation of important R packages
+#' @description  Function to ease the installation of important R packages
+#' @usage  clan.install()
+#' @name clan.install 
+#' @author Claus E. Andersen
+#' @return Side effect is that selected iportant libraries are installed
+#' @export clan.install
+clan.install <- function(repos="http://cran.r-project.org"){
+  require(grid)
+  require(lattice)
+  require(stringr)
+  require(MASS)
+  require(chron)
+  print("Install important packages.")
+  getOption("repos")
+  install.packages("stringr",)
+  install.packages("plyr",repos=repos)
+  install.packages("gridBase",repos=repos)
+  install.packages("gridExtra",repos=repos)
+  install.packages("lattice",repos=repos)
+  install.packages("latticeExtra",repos=repos)
+  install.packages("ggplot2",repos=repos)
+  install.packages("doBy",repos=repos)
+  install.packages("chron",repos=repos)
+  
+  install.packeges("devtools")
 
+  install_github("clanTools","claus-e-andersen")  
+  install_github("clanLattice","claus-e-andersen")
+#  install_github("clanOptim","claus-e-andersen")
+#  install_github("clanEgsnrc","claus-e-andersen")
+#  install_github("clanMEView","claus-e-andersen")
+}
+
+
+#' @title  Version function for the clanTools library
+#' @description  Version function for the clanTools library
+#' @usage  clanTools()
+#' @name clanTools 
+#' @author Claus E. Andersen
+#' @return list with information about the version and the functions in the library
+#' @export 
+clanTools <- function(){
+  list(name="clanTools",
+       version=0.008,
+       date="August 3, 2014",
+       functions=sort(c("clanTools","clan.install","wrline",
+                        "replacechar","substitute.char","extract.first.number","extract.given.number",
+                        "leading.zeros","leading.zeros.to.fit",
+                        "round.resolution","round.ca","leading.blanks",
+                        "first.element","last.element","most.common.element",
+                        "workflow.ca",
+                        "dayno.clock","dayno.calc","dayno.clock.reversed",
+                        "thermistor.degC","thermistor.ohm","coefficients.ca"
+       )))
+}
