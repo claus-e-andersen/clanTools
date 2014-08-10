@@ -13,7 +13,7 @@ library(devtools)
 
 
 
-(2) Then get the clanTools package from githib:
+(2) Then get the clanTools package from github:
 
 install_github("clanTools","claus-e-andersen")
 
