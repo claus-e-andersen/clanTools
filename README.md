@@ -18,3 +18,13 @@ library(devtools)
 install_github("clanTools","claus-e-andersen")
 
 library(clanTools)
+
+
+(3) To get a list of functions in the library, just call:
+
+help(package=clanTools)
+
+or
+
+library(help=clanTools)
+
