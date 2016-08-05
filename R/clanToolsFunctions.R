@@ -29,25 +29,25 @@ coefficients.ca <- function(fm){
 #' @return The first element
 #' @param x is the vector
 #' @param na.ignore controls if NA-values should be ignored
+#' @param N (default = 1) is the number of elements that should be returned
 #' @export
-first.element <- function(x,na.ignore=TRUE){
+first.element <- function(x,na.ignore=TRUE,N=1){
   # Library: clan
   # just a note
   # Created: March 22, 2002
   # Revised: March 22, 2002
+  # Revised: August 5, 2016
   # Name   : Claus E. Andersen
   # Task:    Find the last element in a single vector.
   #          As default, NA's are ignored, so the call
   #          first.element(c(NA, 3:100, NA)) will return 3.
   if(is.null(x) |  sum(!is.na(x))==0| length(x)==0){
     res <- NA
-  } else
-  {N <- length(x)
-   index <- 1:N
-   ok <- rep(T,N)
-   if(na.ignore) ok <- !is.na(x)
-   index <- index[ok]
-   res <- x[min(N,index)]}
+  } else {
+  if(na.ignore){x <- x[!is.na(x)]}
+  N <- min(length(x),N)
+  res <- x[1:N]
+  }
   return(res)
 }
 

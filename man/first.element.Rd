@@ -11,6 +11,8 @@ first.element(xx)
 \item{x}{is the vector}
 
 \item{na.ignore}{controls if NA-values should be ignored}
+
+\item{N}{(default = 1) is the number of elements that should be returned}
 }
 \value{
 The first element
