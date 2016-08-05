@@ -61,27 +61,30 @@ first.element <- function(x,na.ignore=TRUE){
 #' @return The last element
 #' @param x is the vector
 #' @param na.ignore controls if NA-values should be ignored
+#' @param N (default = 1) is the number of elements that should be returned
 #' @export
-last.element <- function(x,na.ignore=TRUE){
+last.element <- function(x,na.ignore=TRUE,N=1){
   # Library: clan
   # Created: March 22, 2002
   # Revised: March 22, 2002
+  # Revised: August 5, 2016
   # Name   : Claus E. Andersen
   # Task:    Find the last element in a single vector
   #          As default NA's are ignored, so the call
   #          last.element(c(NA, 1:100, NA)) will return the 100.
+  # The argument N can be used to extract more than one elemet.
+  # So, last.element(1:30,N=6) 
+  # returns:
+  # 30 29 28 27 26 25
   if(is.null(x) |  sum(!is.na(x))==0| length(x)==0){
     res <- NA
   } else
-  {N <- length(x)
-   index <- 1:N
-   ok <- rep(T,N)
-   if(na.ignore) ok <- !is.na(x)
-   index <- index[ok]
-   res <- x[max(1,index)]}
+  {
+    if(na.ignore){x <- x[!is.na(x)]}
+    N <- min(length(x),N)
+    res <- rev(x)[1:N]}
   return(res)
 }
-
 
 #' @title  Find the most common element(s) in a single vector.
 #' @description 

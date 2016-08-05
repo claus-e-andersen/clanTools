@@ -12,3 +12,4 @@ Depends:
 License: GPL (>= 3)
 Repository: GITHUB / claus-e-andersen
 LazyData: true
+RoxygenNote: 5.0.1
