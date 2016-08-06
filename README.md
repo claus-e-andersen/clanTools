@@ -10,13 +10,16 @@ List of recommended R packages to install.
 clanTools:
 Lists all functions available in this package and version information.
 
-coefficients.ca:
+coefficients.ca & lm.extract:
 This function helps get easy access to the uncertainties associated with the fit.
 
 create.latex.table which:
 This function facilitates the generation of data to be used in the tabular environment of the 
 latex (i.e. the type-setting system called Latex). It is also used in the txtplot function (see the
 clanLattice package).
+
+create.date.string:
+Create a nice date string (like: Aug. 10, 2016).
 
 first.element, last.element, most.common.element: 
 Find the first, last or the most common element(s) in a single vector
@@ -41,6 +44,9 @@ Round off to given resolution.
 
 round.ca:
 Round off to given number of decimals 
+
+trim.whitespace:
+Remove white space (blanks etc.) from string.
 
 leading.blanks:
 Add leading blanks. This is to align data in Latex tables.
