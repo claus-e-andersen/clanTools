@@ -727,31 +727,37 @@ workflow.ca <- function(){
 #' @return Side effect is that selected iportant libraries are installed
 #' @export clan.install
 clan.install <- function(repos="http://cran.r-project.org"){
-  require(grid)
-  require(lattice)
-  require(stringr)
-  require(MASS)
-  require(chron)
   print("Install important packages.")
   getOption("repos")
+
+  install.packages("devtools")
+  install.packages("roxygen2",repos=repos)
+  install.packages("testthat",repos=repos)
+  install.packages("knitr",repos=repos)
+  
   install.packages("stringr",repos=repos)
-  install.packages("plyr",repos=repos)
+  install.packages("dplyr",repos=repos)
+  
   install.packages("gridBase",repos=repos)
   install.packages("gridExtra",repos=repos)
+  install.packages("grid",repos=repos)
   install.packages("lattice",repos=repos)
   install.packages("latticeExtra",repos=repos)
   install.packages("ggplot2",repos=repos)
-  install.packages("doBy",repos=repos)
-  install.packages("chron",repos=repos)
-  
-  install.packeges("devtools")
 
-  install_github("clanTools","claus-e-andersen")  
-  install_github("clanLattice","claus-e-andersen")
-  install_github("clanOptim","claus-e-andersen")
-  install_github("clanEgsnrc","claus-e-andersen")
-  install_github("clanMEView","claus-e-andersen")
-}
+  install.packages("chron",repos=repos)
+  install.packages("mgcv",repos=repos)
+  install.packages("digest",repos=repos)
+  install.packages("MASS",repos=repos)
+  install.packages("tidyr",repos=repos)
+  install.packages("jpeg",repos=repos)
+  
+  install_github("claus-e-andersen/clanTools")  
+  install_github("claus-e-andersen/clanLattice")
+  install_github("claus-e-andersen/clanOptim")
+  install_github("claus-e-andersen/clanEgsnrc")
+  install_github("claus-e-andersenclanMEView")
+  }
 
 
 #' @title  Version function for the clanTools library
