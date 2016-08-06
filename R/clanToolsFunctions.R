@@ -740,7 +740,6 @@ clan.install <- function(repos="http://cran.r-project.org"){
   
   install.packages("gridBase",repos=repos)
   install.packages("gridExtra",repos=repos)
-  install.packages("grid",repos=repos)
   install.packages("lattice",repos=repos)
   install.packages("latticeExtra",repos=repos)
   install.packages("ggplot2",repos=repos)
