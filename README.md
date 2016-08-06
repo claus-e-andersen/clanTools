@@ -1,7 +1,12 @@
 clanTools
 =========
 
-General R tools 
+General R tools
+
+This package includes functions like create.latex.table which facilitates the generation of data to be used
+in the tabular environment of the latex (i.e. the type-setting system called Latex).  
+
+The package also includes functions like first.element and last.element.
 
 To install this package do the following:
 
