@@ -19,7 +19,8 @@ latex (i.e. the type-setting system called Latex). It is also used in the txtplo
 clanLattice package).
 
 create.date.string:
-Create a nice date string (like: Aug. 10, 2016).
+Create a nice date string (like: May 6 (Tuesday) or "May 6, 2014 (Tuesday)" depending on the selected format).
+This function uses the chron package.
 
 first.element, last.element, most.common.element: 
 Find the first, last or the most common element(s) in a single vector
