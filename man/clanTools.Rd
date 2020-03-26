@@ -15,4 +15,3 @@ Version function for the clanTools library
 \author{
 Claus E. Andersen
 }
-

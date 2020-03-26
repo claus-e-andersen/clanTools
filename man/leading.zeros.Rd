@@ -21,4 +21,3 @@ Add zeros when numbers occur in filenames and such
 \author{
 Claus E. Andersen
 }
-

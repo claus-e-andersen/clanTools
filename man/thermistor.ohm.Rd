@@ -18,4 +18,3 @@ Conversion for NTC (e.g. 2 kohm) thermistors (Risoe parameterization)
 \author{
 Claus E. Andersen
 }
-

@@ -20,4 +20,3 @@ Extract the N'th numbers from each individual string element in a vector.
 \author{
 Claus E. Andersen
 }
-

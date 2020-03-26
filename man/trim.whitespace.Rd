@@ -15,4 +15,3 @@ Trim a string for white space.
 \author{
 Claus E. Andersen
 }
-

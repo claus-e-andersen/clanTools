@@ -30,4 +30,3 @@ Add leading blanks. This is to align data in Latex tables.
 \author{
 Claus E. Andersen
 }
-

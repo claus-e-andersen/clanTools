@@ -15,4 +15,3 @@ Function to ease the installation of important R packages
 \author{
 Claus E. Andersen
 }
-

@@ -20,4 +20,3 @@ Extract data from fitted lm-model
 \author{
 Claus E. Andersen
 }
-

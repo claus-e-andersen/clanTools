@@ -22,4 +22,3 @@ This function helps get easy access to the uncertainties associated with the fit
 \author{
 Claus E. Andersen
 }
-

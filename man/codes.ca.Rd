@@ -18,4 +18,3 @@ This function will be deleted.
 \author{
 Claus E. Andersen
 }
-

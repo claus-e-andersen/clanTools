@@ -21,4 +21,3 @@ Sample call: dayno.clock.reversed(c(0.0,0.3,4444.5)) (returns: "00:00",""07:12",
 \author{
 Claus E. Andersen
 }
-

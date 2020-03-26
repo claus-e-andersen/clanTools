@@ -22,4 +22,3 @@ Replace a single character.
 \author{
 Claus E. Andersen
 }
-

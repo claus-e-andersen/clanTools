@@ -19,4 +19,3 @@ Template for graphical output using pdf, ps or png format.
 \author{
 Claus E. Andersen
 }
-

@@ -19,4 +19,3 @@ function is vectorized.
 \author{
 Claus E. Andersen
 }
-

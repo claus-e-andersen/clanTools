@@ -20,4 +20,3 @@ is camculated automatically.
 \author{
 Claus E. Andersen
 }
-

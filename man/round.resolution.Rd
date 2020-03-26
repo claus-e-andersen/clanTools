@@ -27,4 +27,3 @@ two values in the output that we want to her about.
 \author{
 Claus E. Andersen
 }
-

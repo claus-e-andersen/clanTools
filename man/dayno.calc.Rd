@@ -25,4 +25,3 @@ Note: 1) Any delimiter will do, 2) seconds are option
 \author{
 Claus E. Andersen
 }
-

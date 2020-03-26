@@ -23,4 +23,3 @@ This functions also handles NULL vectors and NA-values.
 \author{
 Claus E. Andersen
 }
-

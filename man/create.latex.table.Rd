@@ -24,4 +24,3 @@ Generate a table for Latex (with &'s and \\-line endings).
 \author{
 Claus E. Andersen
 }
-

@@ -24,4 +24,3 @@ This function can be used to separate report output
 \author{
 Claus E. Andersen
 }
-
