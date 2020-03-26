@@ -395,7 +395,7 @@ leading.blanks <-  function(df, blank.char = ".", extra.char = " ", min.width = 
 #' @return A vector of string with the rounded numbers.
 #' @param x is a vector of numbers
 #' @param resolution is the number of requested digits
-#' @export round.res
+#' @export 
 round.res <- function(x,resolution=6){
 # March 26, 2020
 if(is.null(x) || is.na(x) ) {x.txt <- as.character(x)} else {
@@ -408,7 +408,7 @@ if(is.null(x) || is.na(x) ) {x.txt <- as.character(x)} else {
 #' @title  Use significance to reformat number to given resolution.
 #' @description Reformat number to given resolution.
 #' @usage  signif.res(c(1.26763,0.00123,1,0.0011,1e-19,1.1e-4,NA),2) 
-#' @name round.res
+#' @name signif.res
 #' @author Claus E. Andersen
 #' @return A vector of string with the rounded numbers.
 #' @param x is a vector of numbers
@@ -417,7 +417,7 @@ if(is.null(x) || is.na(x) ) {x.txt <- as.character(x)} else {
 #' @param take.as.zero If a number is below the take.as.zero, then we apply the fixed-number-of-digits approach.
 #' @param print.for.na is printed for NA-values
 #' @param method is the method used to determine significance (default method = "signif").
-#' @export signif.res
+#' @export
 signif.res <- function(x, resolution=6, resolution.zero=4, take.as.zero=1e-4, print.for.na="Not avail.", method="signif"){
   # March 26, 2020
   # Format number after number digits including tailing zeros
@@ -836,7 +836,7 @@ clan.install <- function(repos="http://cran.r-project.org",force=TRUE){
 #' @export 
 clanTools <- function(){
   list(name="clanTools",
-       version=0.009,
+       version=0.010,
        date="March 26, 2020",
        functions=sort(c("clanTools","clan.install","wrline",
                         "replacechar","substitute.char","extract.first.number","extract.given.number",
