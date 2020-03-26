@@ -13,14 +13,14 @@ signif.res(c(1.26763,0.00123,1,0.0011,1e-19,1.1e-4,NA),2)
 
 \item{resolution.zero}{is the number of fixed-number-of-digits near zero.}
 
-\item{take.as.zero}{If a number is below the take.as.zero, then we apply the fixed-number-of-digits approach.}
-
-\item{print.for.na}{is printed for NA-values}
+\item{print.for.na}{is the value printed for NAs.}
 
 \item{method}{is the method used to determine significance (default method = "signif").}
+
+\item{take.as.zero:}{positive number below which we apply the fixed-number-of-digits approach. For a negative number, no such special approach is taken.}
 }
 \value{
-A vector of string with the rounded numbers.
+A vectorof strings with the rounded numbers.
 }
 \description{
 Reformat number to given resolution.

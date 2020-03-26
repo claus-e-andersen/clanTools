@@ -410,12 +410,12 @@ if(is.null(x) || is.na(x) ) {x.txt <- as.character(x)} else {
 #' @usage  signif.res(c(1.26763,0.00123,1,0.0011,1e-19,1.1e-4,NA),2) 
 #' @name signif.res
 #' @author Claus E. Andersen
-#' @return A vector of string with the rounded numbers.
+#' @return A vectorof strings with the rounded numbers.
 #' @param x is a vector of numbers
 #' @param resolution is the number of significant digits
 #' @param resolution.zero is the number of fixed-number-of-digits near zero.
-#' @param take.as.zero If a number is below the take.as.zero, then we apply the fixed-number-of-digits approach.
-#' @param print.for.na is printed for NA-values
+#' @param take.as.zero: positive number below which we apply the fixed-number-of-digits approach. For a negative number, no such special approach is taken.
+#' @param print.for.na is the value printed for NAs.
 #' @param method is the method used to determine significance (default method = "signif").
 #' @export signif.res
 signif.res <- function(x, resolution=6, resolution.zero=4, take.as.zero=1e-4, print.for.na="Not avail.", method="signif"){
@@ -436,11 +436,13 @@ signif.res <- function(x, resolution=6, resolution.zero=4, take.as.zero=1e-4, pr
     # From https://stackoverflow.com/questions/3245862/format-numbers-to-significant-figures-nicely-in-r
     x.txt <- formatC(signif(x,digits=resolution), digits=resolution,format="fg", flag="#")
     x.txt.zero <- sprintf(paste("%.",resolution.zero,"f",sep=""), round(x,resolution.zero))
-    ok <- abs(x)<= take.as.zero
+    
+    # Note that if take.as.zero is negative, then this approach will not be used. 
+    ok <- !is.na(x) && abs(x)<= take.as.zero
     if(sum(ok,na.rm=TRUE)>0){
       x.txt[ok] <- x.txt.zero[ok] 
     }
-  }# method=="signif"
+   }# method=="signif"
   
   ok <- is.na(x)
   if(sum(ok)>0){
