@@ -1,6 +1,6 @@
 Package: clanTools
-Version: 0.008
-Date: 2014-08-03
+Version: 0.010
+Date: 2020-03-26
 Title: R functions of general use for data analysis and presentation
 Author: Claus E. Andersen
 Maintainer: Claus E. Andersen <clan@dtu.dk>
