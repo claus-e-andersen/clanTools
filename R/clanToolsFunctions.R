@@ -384,6 +384,74 @@ leading.blanks <-  function(df, blank.char = ".", extra.char = " ", min.width = 
     df
   }
 
+
+
+
+#' @title  Reformat number to given resolution.
+#' @description Reformat number to given resolution.
+#' @usage  round.res(4.5555)
+#' @name round.res
+#' @author Claus E. Andersen
+#' @return A vector of string with the rounded numbers.
+#' @param x is a vector of numbers
+#' @param resolution is the number of requested digits
+#' @export round.res
+round.res <- function(x,resolution=6){
+# March 26, 2020
+if(is.null(x) || is.na(x) ) {x.txt <- as.character(x)} else {
+    x.txt <- sprintf(paste("%.",resolution,"f",sep=""), round(x,resolution))
+  }
+  return(x.txt)
+}
+
+
+#' @title  Use significance to reformat number to given resolution.
+#' @description Reformat number to given resolution.
+#' @usage  signif.res(c(1.26763,0.00123,1,0.0011,1e-19,1.1e-4,NA),2) 
+#' @name round.res
+#' @author Claus E. Andersen
+#' @return A vector of string with the rounded numbers.
+#' @param x is a vector of numbers
+#' @param resolution is the number of significant digits
+#' @param resolution.zero is the number of fixed-number-of-digits near zero.
+#' @param take.as.zero If a number is below the take.as.zero, then we apply the fixed-number-of-digits approach.
+#' @param print.for.na is printed for NA-values
+#' @param method is the method used to determine significance (default method = "signif").
+#' @export signif.res
+signif.res <- function(x, resolution=6, resolution.zero=4, take.as.zero=1e-4, print.for.na="Not avail.", method="signif"){
+  # March 26, 2020
+  # Format number after number digits including tailing zeros
+  # Sample call: signif.res(c(1.26763,0.00123,1,0.0011,1e-19,1.1e-4,NA),2) 
+  # If a number is below the take.as.zero, then we apply the fixed-number-of-digits approach.
+  # Make sure we can print something meaningful even if x is null
+  if(is.null(x)){x <- NA}
+  
+  if(method=="round.to.fixed"){
+    # Fixed resolution
+    x.txt <- sprintf(paste("%.",resolution,"f",sep=""), round(x,resolution))
+  }
+  
+  if(method=="signif"){
+    # The resolution is actually the number of significant digits
+    # From https://stackoverflow.com/questions/3245862/format-numbers-to-significant-figures-nicely-in-r
+    x.txt <- formatC(signif(x,digits=resolution), digits=resolution,format="fg", flag="#")
+    x.txt.zero <- sprintf(paste("%.",resolution.zero,"f",sep=""), round(x,resolution.zero))
+    ok <- abs(x)<= take.as.zero
+    if(sum(ok,na.rm=TRUE)>0){
+      x.txt[ok] <- x.txt.zero[ok] 
+    }
+  }# method=="signif"
+  
+  ok <- is.na(x)
+  if(sum(ok)>0){
+    x.txt[ok] <- print.for.na
+  }
+  return(x.txt)
+} # end signif.res
+
+
+
+
 #' @title  Write a double line 
 #' @description This function can be used to separate report output
 #' @usage  wrline("End")
@@ -768,12 +836,12 @@ clan.install <- function(repos="http://cran.r-project.org",force=TRUE){
 #' @export 
 clanTools <- function(){
   list(name="clanTools",
-       version=0.008,
-       date="August 3, 2014",
+       version=0.009,
+       date="March 26, 2020",
        functions=sort(c("clanTools","clan.install","wrline",
                         "replacechar","substitute.char","extract.first.number","extract.given.number",
                         "leading.zeros","leading.zeros.to.fit",
-                        "round.resolution","round.ca","leading.blanks",
+                        "round.resolution","round.ca","round.res","leading.blanks",
                         "first.element","last.element","most.common.element",
                         "workflow.ca",
                         "dayno.clock","dayno.calc","dayno.clock.reversed",
