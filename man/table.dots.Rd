@@ -21,7 +21,7 @@ table.dots("k.elec",N=40,before=!FALSE,st=".",st.space=" ")
 string vector
 }
 \description{
-Objective: To pad dots (or other text) to tables for improved readability.
+Objective: To pad dots (or other text) to tables for improved readability. 
 See also: \link{"table.dots.vec"}.
 Sample call: 
 

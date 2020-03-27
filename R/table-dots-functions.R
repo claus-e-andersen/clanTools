@@ -1,6 +1,6 @@
 #' @title  To pad dots (or other text) to tables for improved readability.
 #' @description 
-#' Objective: To pad dots (or other text) to tables for improved readability.
+#' Objective: To pad dots (or other text) to tables for improved readability. 
 #' See also: \link{"table.dots.vec"}.
 #' Sample call: 
 #' 
@@ -76,7 +76,7 @@ table.dots <- function(txt,N=40,before=TRUE,st=".",st.space=""){
 #' @return string vector
 #' @param txt vector of strings.
 #' @param N number of dots (e.g. 40).
-#' @param before should be set to TRUE if the dots should preceed the txt.
+#' @param before should be set to TRUE if the dots should preceed the txt. 
 #' @param st is the dot-string (e.g. ".").
 #' @param st.space (e.g. " = ").
 #' @export table.dots.vec
