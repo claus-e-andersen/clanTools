@@ -839,7 +839,7 @@ clan.install <- function(repos="http://cran.r-project.org",force=TRUE){
 clanTools <- function(){
   list(name="clanTools",
        version=0.010,
-       date="March 26, 2020",
+       date="March 27, 2020",
        functions=sort(c("clanTools","clan.install","wrline",
                         "replacechar","substitute.char","extract.first.number","extract.given.number",
                         "leading.zeros","leading.zeros.to.fit",

@@ -19,7 +19,7 @@ sprintf.ca("%.5f", round(6.6e42,0),max.chars=9999); see also body of function.
 NULL (the side effect is that a line is printed)
 }
 \description{
-This is a variation of sprintf, that checks if the formated results is too long. This can happen, for example, with electrometer output, where normal results are 0.004 pC and then an overflow gives a charge of 6e47 C, which produces an output that ruins txtplot table output.
+This is a variation of sprintf, that checks if the formated results is too long.
 }
 \author{
 Claus E. Andersen
