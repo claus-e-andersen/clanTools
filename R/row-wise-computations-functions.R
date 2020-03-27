@@ -3,7 +3,8 @@
 #' The R base function rowMeans does not work if there is only one column!
 #' This function mitigates that problem. vec is a vector of column names in df such as, 
 #' e.g. c("degC.W1","degC.W2").
-#' @usage  rowMeans.ca(df,c("degC.W1","degC.W2"))
+#' See also \link{get.selected.data} and \link{get.selected.data.sd}.
+#' #' @usage  rowMeans.ca(df,c("degC.W1","degC.W2"))
 #' @name rowMeans.ca
 #' @author Claus E. Andersen
 #' @return string vector
@@ -28,6 +29,7 @@ rowMeans.ca <- function(df,vec){
 #' Useful function for extracting data and combining data based on a vector of column names in a dataframe.
 #' If name.vec is NULL, then assign the value given in null.default
 #' Used in: step42-electrometer-cal-single-file-009-6
+#' Se also \link{rowMeans.ca} \link{get.selected.data.sd}.
 #' 
 #' Sample use: read.table(fn.full,sep=";",header=TRUE,quote = "\"",) \%>\%
 #' 
@@ -107,7 +109,7 @@ get.selected.data <- function(df,name.vec,null.default=0.0){
 #' @description
 #' Useful function for extracting data and combining data based on a vector of column names in a dataframe.
 #' Useful function for extracting data and combining data based on a vector of column names in a dataframe.
-#' See \ling{get.selected.data}.
+#' See \link{get.selected.data} and \link{rowMeans.ca}.
 #' Here we compute (row by row) the standard deviation of the selected colums
 #' @usage  df \%>\% mutate(V.raw.sd = get.selected.data.sd(.,V.use.vec)) 
 #' @name get.selected.data.sd

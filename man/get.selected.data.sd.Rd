@@ -19,7 +19,7 @@ string vector
 \description{
 Useful function for extracting data and combining data based on a vector of column names in a dataframe.
 Useful function for extracting data and combining data based on a vector of column names in a dataframe.
-See \ling{get.selected.data}.
+See \link{get.selected.data} and \link{rowMeans.ca}.
 Here we compute (row by row) the standard deviation of the selected colums
 }
 \author{

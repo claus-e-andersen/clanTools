@@ -4,7 +4,7 @@
 \alias{rowMeans.ca}
 \title{Improved function for computation of row means (row-wise means).}
 \usage{
-rowMeans.ca(df,c("degC.W1","degC.W2"))
+rowMeans.ca(df, vec)
 }
 \arguments{
 \item{df}{data frame}
@@ -18,6 +18,8 @@ string vector
 The R base function rowMeans does not work if there is only one column!
 This function mitigates that problem. vec is a vector of column names in df such as, 
 e.g. c("degC.W1","degC.W2").
+See also \link{get.selected.data} and \link{get.selected.data.sd}.
+#' @usage  rowMeans.ca(df,c("degC.W1","degC.W2"))
 }
 \author{
 Claus E. Andersen
