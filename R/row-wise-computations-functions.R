@@ -4,7 +4,7 @@
 #' This function mitigates that problem. vec is a vector of column names in df such as, 
 #' e.g. c("degC.W1","degC.W2").
 #' See also \link{get.selected.data} and \link{get.selected.data.sd}.
-#' #' @usage  rowMeans.ca(df,c("degC.W1","degC.W2"))
+#' @usage  rowMeans.ca(df,c("degC.W1","degC.W2"))
 #' @name rowMeans.ca
 #' @author Claus E. Andersen
 #' @return string vector
