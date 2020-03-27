@@ -7,13 +7,14 @@
 English.months(1)
 }
 \arguments{
-\item{i}{number between 1 and 12.}
+\item{i}{vector with numbers between 1 and 12.}
 }
 \value{
-string
+string vector
 }
 \description{
-Convert numbers 1 to 12 into "January", "February" etc.
+Convert numbers from 1 to 12 into "January", "February" etc.
+This version handles vectorized input, and NA's and NULL.
 }
 \author{
 Claus E. Andersen
