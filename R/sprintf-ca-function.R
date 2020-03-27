@@ -1,6 +1,6 @@
 #' @title  Print number to fit certain format. An alternative is used if this requires too many characters.
 #' @description This is a variation of sprintf, that checks if the formated results is too long. 
-#' @usage  sprintf.ca("%.5f", round(6.6e42,0),max.chars=9999); see also body of function.
+#' @usage  sprintf.ca(\"%.5f\", round(6.6e42,0),max.chars=9999); see also body of function.
 #' @name sprintf.ca 
 #' @author Claus E. Andersen
 #' @return formated number.
