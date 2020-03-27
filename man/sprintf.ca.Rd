@@ -4,7 +4,7 @@
 \alias{sprintf.ca}
 \title{Print number to fit certain format. An alternative is used if this requires too many characters.}
 \usage{
-sprintf.ca("% . 5 f", round(5.1,0),max.chars=9999)
+sprintf.ca(".5f", round(5.1,0),max.chars=9999)
 }
 \arguments{
 \item{format}{is the main format (e.g. "12:00").}
