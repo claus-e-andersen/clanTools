@@ -7,16 +7,16 @@
 sprintf.ca("%.5f", round(6.6e42,0),max.chars=9999); see also body of function.
 }
 \arguments{
-\item{format}{(e.g. "%.5f").}
+\item{format}{is the format.}
 
 \item{number}{to print.}
 
-\item{format.alt}{is the alternative format (e.g. "%.4e").}
+\item{format.alt}{is the alternative format.}
 
 \item{max.char}{is the maximum of characters the the format needs to fit (otherwise the alternative format is used).}
 }
 \value{
-NULL (the side effect is that a line is printed)
+formated number.
 }
 \description{
 This is a variation of sprintf, that checks if the formated results is too long.

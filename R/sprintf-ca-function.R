@@ -3,10 +3,10 @@
 #' @usage  sprintf.ca("%.5f", round(6.6e42,0),max.chars=9999); see also body of function.
 #' @name sprintf.ca 
 #' @author Claus E. Andersen
-#' @return NULL (the side effect is that a line is printed)
-#' @param format (e.g. "%.5f").
+#' @return formated number.
+#' @param format is the format.
 #' @param number to print.
-#' @param format.alt is the alternative format (e.g. "%.4e").
+#' @param format.alt is the alternative format.
 #' @param max.char is the maximum of characters the the format needs to fit (otherwise the alternative format is used).
 #' @export sprintf.ca 
 sprintf.ca <- function(format,number,format.alt="%.4e",max.chars=10){
