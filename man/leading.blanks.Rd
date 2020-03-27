@@ -32,9 +32,13 @@ Why? To avoid problems with NA's in dataframes in txtplot.
 Main purpose: to align data in Latex tables.
 The ignore.first parameters controls the first row (often a row with names).
 For example:
+
   xx <- data.frame(sample(c(1,1055500,10),10,replace=T),sample(c("a","aba","sfgsdfgfhgd"),10,replace=T))
+  
   xx.LATEX <- create.latex.table(xx)
+  
   yy <- leading.blanks(xx.LATEX,"x")
+  
   yy
   write.table(yy,"xx.txt",sep=" ",dimnames.write = F)
 }

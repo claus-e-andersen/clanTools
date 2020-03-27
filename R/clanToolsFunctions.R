@@ -340,11 +340,16 @@ round.ca <- function(x, decimals = 3, ...)
 #' Main purpose: to align data in Latex tables.
 #' The ignore.first parameters controls the first row (often a row with names).
 #' For example:
+#' 
 #'   xx <- data.frame(sample(c(1,1055500,10),10,replace=T),sample(c("a","aba","sfgsdfgfhgd"),10,replace=T))
+#'   
 #'   xx.LATEX <- create.latex.table(xx)
+#'   
 #'   yy <- leading.blanks(xx.LATEX,"x")
+#'   
 #'   yy
 #'   write.table(yy,"xx.txt",sep=" ",dimnames.write = F)
+#'   
 #' @usage  leading.blanks(xx.LATEX,"x") See example in body of function.
 #' @name leading.blanks
 #' @author Claus E. Andersen
@@ -357,14 +362,13 @@ round.ca <- function(x, decimals = 3, ...)
 #' @param ignore.first is gives special treatment to first column
 #' @param trace equal to TRUE produces output during execution 
 #' @export leading.blanks
-leading.blanks <-  function(df, blank.char = ".", extra.char = " ", min.width = 1, max.width = 99, ignore.first = FALSE, trace = FALSE)
-{
+leading.blanks <-  function(df, blank.char = ".", extra.char = " ", min.width = 1, max.width = 99, ignore.first = FALSE, trace = FALSE){
   # Created: April 10, 2005
   # Revised: April 10, 2005
   # Revised: July 19, 2017 
-  #    Changed from: cc.width <- nchar(as.character(cc))
-  #    to: cc.width <- nchar(as.character(cc),type="width")
-  #    Why? To avoid problems with NA's in dataframes in txtplot.
+  # Changed from: cc.width <- nchar(as.character(cc))
+  # to: cc.width <- nchar(as.character(cc),type="width")
+  # Why? To avoid problems with NA's in dataframes in txtplot.
   # Name   : Claus E. Andersen
   # Main purpose: to align data in Latex tables.
   # The ignore.first parameters controls the first row (often a row with names).
@@ -373,8 +377,9 @@ leading.blanks <-  function(df, blank.char = ".", extra.char = " ", min.width = 
   #   xx.LATEX <- create.latex.table(xx)
   #   yy <- leading.blanks(xx.LATEX,"x")
   #   yy
-  #   write.table(yy,"xx.txt",sep=" ",dimnames.write = F)
+  #   write.table(yy,"xx.txt",sep=" ",row.names = FALSE)
   for(i in 1:ncol(df)) {
+    # Loop
     cc <- df[, i]
     cc <- as.character(cc)
     cc.all <- cc
