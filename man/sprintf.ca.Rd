@@ -4,7 +4,7 @@
 \alias{sprintf.ca}
 \title{Print number to fit certain format. An alternative is used if this requires too many characters.}
 \usage{
-sprintf.ca("%.5f", round(6.6e42,0),max.chars=9999); see also body of function.
+sprintf.ca(%.5f, round(6.6e42,0),max.chars=9999); see also body of function.
 }
 \arguments{
 \item{format}{is the format.}
