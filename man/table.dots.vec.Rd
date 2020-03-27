@@ -4,7 +4,7 @@
 \alias{table.dots.vec}
 \title{To pad dots (or other text) to tables for improved readability. This is a vectorized version.}
 \usage{
-table.dots("k.elec",N=40,before=!FALSE,st=".",st.space=" ")
+table.dots.vec(c("k.elec","k.elec.pos","k.elec.mean"),N=40,before=FALSE,st=".",st.space=" ")
 }
 \arguments{
 \item{N}{number of dots (e.g. 40).}

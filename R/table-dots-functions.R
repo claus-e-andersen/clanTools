@@ -70,7 +70,7 @@ table.dots <- function(txt,N=40,before=TRUE,st=".",st.space=""){
 #' 
 #' [3] "k.elec.mean ............................"
 #' 
-#' @usage  table.dots("k.elec",N=40,before=!FALSE,st=".",st.space=" ")
+#' @usage  table.dots.vec(c("k.elec","k.elec.pos","k.elec.mean"),N=40,before=FALSE,st=".",st.space=" ")
 #' @name table.dots.vec
 #' @author Claus E. Andersen
 #' @return string vector
