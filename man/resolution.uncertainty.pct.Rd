@@ -7,18 +7,18 @@
 resolution.uncertainty.pct(1004,digits=4,last.digit.step=1)
 }
 \arguments{
-\item{x}{raw reading.}
+\item{x}{raw reading (can be vectorized).}
 
 \item{digits}{number of digits on the instrument display.}
 
 \item{last.digit.step}{resolution of last digit (e.g. 1 or 5).}
 
-\item{min.value}{(e.g. 0.001).}
+\item{min.value}{do not report an uncertainty below this value (e.g. 0.001).}
 
-\item{max.value}{(e.g. 50).}
+\item{max.value}{do not report an uncertainty above this value (e.g. 50).}
 }
 \value{
-numeric (pct uncertainty)
+numeric value (pct uncertainty). May be vectorixed.
 }
 \description{
 We compute the standard uncertainty from resolution limitations
@@ -26,7 +26,10 @@ as half the last digit. So, with four digits, a reading starting
 with 1 (like 1.002 or -1.192e-88) will lead to an estimated
 resolution uncertainty of about 0.05\%. Note that we assume that
 the instrument always provides the given number of digits.
-0.05\% : resolution.uncertainty.pct(1004,digits=4,last.digit.step=1)
+
+Example of a 0.05\% resolution uncertainty:
+
+resolution.uncertainty.pct(1004,digits=4,last.digit.step=1)
 }
 \author{
 Claus E. Andersen

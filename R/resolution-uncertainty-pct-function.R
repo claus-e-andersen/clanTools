@@ -5,16 +5,20 @@
 #' with 1 (like 1.002 or -1.192e-88) will lead to an estimated
 #' resolution uncertainty of about 0.05\%. Note that we assume that
 #' the instrument always provides the given number of digits.
-#' 0.05\% : resolution.uncertainty.pct(1004,digits=4,last.digit.step=1)
+#' 
+#' Example of a 0.05\% resolution uncertainty:
+#' 
+#' resolution.uncertainty.pct(1004,digits=4,last.digit.step=1)
+#' 
 #' @usage  resolution.uncertainty.pct(1004,digits=4,last.digit.step=1)
 #' @name resolution.uncertainty.pct
 #' @author Claus E. Andersen
-#' @return numeric (pct uncertainty)
-#' @param x raw reading.
+#' @return numeric value (pct uncertainty). May be vectorixed.
+#' @param x raw reading (can be vectorized).
 #' @param digits number of digits on the instrument display.
 #' @param last.digit.step resolution of last digit (e.g. 1 or 5).
-#' @param min.value (e.g. 0.001).
-#' @param max.value (e.g. 50).
+#' @param min.value do not report an uncertainty below this value (e.g. 0.001).
+#' @param max.value do not report an uncertainty above this value (e.g. 50).
 #' @export resolution.uncertainty.pct
 resolution.uncertainty.pct <- function(x,digits=4,last.digit.step=1,min.value=0.001,max.value=50){
   # Created: May 6, 2019
