@@ -4,14 +4,14 @@
 \alias{sprintf.ca}
 \title{Print number to fit certain format. An alternative is used if this requires too many characters.}
 \usage{
-sprintf.ca("12:00",round(6.6e42,0),max.chars=9999); djfkjsdfkjsd
+sprintf.ca("%.5f", round(5.1,0),max.chars=9999)
 }
 \arguments{
-\item{format}{is dayno.clock(c("12:00","23:59","00:00:59","12.00.30","23x30"))}
+\item{format}{is the main format (e.g. "%.5f").}
 
-\item{number}{to print.}
+\item{number}{to print (e.g. 10).}
 
-\item{format.alt}{is the alternative format.}
+\item{format.alt}{is the alternative format (e.g. "%.4e").}
 
 \item{max.char}{is the maximum of characters the the format needs to fit (otherwise the alternative format is used).}
 }

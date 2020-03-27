@@ -1,12 +1,12 @@
 #' @title  Print number to fit certain format. An alternative is used if this requires too many characters.
 #' @description This is a variation of sprintf, that checks if the formated results is too long. 
-#' @usage  sprintf.ca("12:00",round(6.6e42,0),max.chars=9999); djfkjsdfkjsd
+#' @usage  sprintf.ca("%.5f", round(5.1,0),max.chars=9999)
 #' @name sprintf.ca 
 #' @author Claus E. Andersen
 #' @return formated number.
-#' @param format is dayno.clock(c("12:00","23:59","00:00:59","12.00.30","23x30"))
-#' @param number to print.
-#' @param format.alt is the alternative format.
+#' @param format is the main format (e.g. "%.5f").
+#' @param number to print (e.g. 10).
+#' @param format.alt is the alternative format (e.g. "%.4e").
 #' @param max.char is the maximum of characters the the format needs to fit (otherwise the alternative format is used).
 #' @export sprintf.ca 
 sprintf.ca <- function(format,number,format.alt="%.4e",max.chars=10){
