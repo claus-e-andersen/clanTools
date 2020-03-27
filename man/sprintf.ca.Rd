@@ -4,22 +4,22 @@
 \alias{sprintf.ca}
 \title{Print number to fit certain format. An alternative is used if this requires too many characters.}
 \usage{
-sprintf.ca("\%.5f", round(5.1,0),max.chars=9999)
+sprintf.ca("\%.5f", c(1.23, 2.33, 1e99), max.chars=7)
 }
 \arguments{
-\item{format}{is the main format (e.g. "\%.5f").}
+\item{format}{is the main format (e.g. "\%.5f") which is used if the output does not require too many characters.}
 
-\item{number}{to print (e.g. 10).}
+\item{number}{to print (e.g. 1.334 or 1.4e99).}
 
-\item{format.alt}{is the alternative format (e.g. "\%.4e").}
+\item{format.alt}{is the alternative format (e.g. "\%.4e") which is used for output that require too many characters.}
 
-\item{max.char}{is the maximum of characters the the format needs to fit (otherwise the alternative format is used).}
+\item{max.char}{is the maximum number of characters (e.g. 10) that the main format needs to fit (otherwise the alternative format will be used).}
 }
 \value{
 formated number.
 }
 \description{
-This is a variation of sprintf, that checks if the formated results is too long. 
+This is a variation of sprintf, that checks if the formated result is too long. 
 This can happen, for example, with electrometer output, where normal results are 
 0.004 pC and then an overflow gives a charge of 6e47 C, which produces an output 
 that ruins txtplot table output.
