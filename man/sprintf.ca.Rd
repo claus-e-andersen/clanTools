@@ -4,7 +4,7 @@
 \alias{sprintf.ca}
 \title{Print number to fit certain format. An alternative is used if this requires too many characters.}
 \usage{
-sprintf.ca( "12:00", round(6.6e42,0),max.chars=9999); see also body of function.
+\verb{sprintf.ca( "12:00", round(6.6e42,0),max.chars=9999)}
 }
 \arguments{
 \item{format}{is dayno.clock(c("12:00","23:59","00:00:59","12.00.30","23x30"))}
