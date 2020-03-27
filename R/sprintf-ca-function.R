@@ -4,7 +4,7 @@
 #' @name sprintf.ca 
 #' @author Claus E. Andersen
 #' @return formated number.
-#' @param format is the format.
+#' @param format is dayno.clock(c("12:00","23:59","00:00:59","12.00.30","23x30"))
 #' @param number to print.
 #' @param format.alt is the alternative format.
 #' @param max.char is the maximum of characters the the format needs to fit (otherwise the alternative format is used).

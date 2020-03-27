@@ -7,7 +7,7 @@
 sprintf.ca(%.5f, round(6.6e42,0),max.chars=9999); see also body of function.
 }
 \arguments{
-\item{format}{is the format.}
+\item{format}{is dayno.clock(c("12:00","23:59","00:00:59","12.00.30","23x30"))}
 
 \item{number}{to print.}
 
