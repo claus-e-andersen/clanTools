@@ -7,11 +7,11 @@
 sprintf.ca("\%.5f", round(5.1,0),max.chars=9999)
 }
 \arguments{
-\item{format}{is the main format (e.g. "12:00").}
+\item{format}{is the main format (e.g. "\%.5f").}
 
 \item{number}{to print (e.g. 10).}
 
-\item{format.alt}{is the alternative format (e.g. "12:00").}
+\item{format.alt}{is the alternative format (e.g. "\%.4e").}
 
 \item{max.char}{is the maximum of characters the the format needs to fit (otherwise the alternative format is used).}
 }

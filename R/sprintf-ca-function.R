@@ -4,9 +4,9 @@
 #' @name sprintf.ca 
 #' @author Claus E. Andersen
 #' @return formated number.
-#' @param format is the main format (e.g. "12:00").
+#' @param format is the main format (e.g. "\%.5f").
 #' @param number to print (e.g. 10).
-#' @param format.alt is the alternative format (e.g. "12:00").
+#' @param format.alt is the alternative format (e.g. "\%.4e").
 #' @param max.char is the maximum of characters the the format needs to fit (otherwise the alternative format is used).
 #' @export sprintf.ca 
 sprintf.ca <- function(format,number,format.alt="%.4e",max.chars=10){
