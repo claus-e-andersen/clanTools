@@ -14,6 +14,8 @@ table.dots("k.elec",N=40,before=!FALSE,st=".",st.space=" ")
 \item{before}{should be set to TRUE if the dots should preceed the txt.}
 
 \item{st}{is the dot-string (e.g. ".").}
+
+\item{st.space}{(e.g. " = ").}
 }
 \value{
 string vector

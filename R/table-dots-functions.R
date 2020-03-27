@@ -22,7 +22,8 @@
 #' @param N number of dots (e.g. 40).
 #' @param before should be set to TRUE if the dots should preceed the txt.
 #' @param st is the dot-string (e.g. ".").
-#' @export st.space (e.g. " = ").
+#' @param st.space (e.g. " = ").
+#' @export table.dots
 table.dots <- function(txt,N=40,before=TRUE,st=".",st.space=""){
   # Objective: To pad dots (or other text) to tables for improved readability.
   # Created: October 16, 2016
@@ -77,7 +78,8 @@ table.dots <- function(txt,N=40,before=TRUE,st=".",st.space=""){
 #' @param N number of dots (e.g. 40).
 #' @param before should be set to TRUE if the dots should preceed the txt.
 #' @param st is the dot-string (e.g. ".").
-#' @export st.space (e.g. " = ").
+#' @param st.space (e.g. " = ").
+#' @export table.dots.vec
 table.dots.vec <- function(txt.vec,N=40,before=TRUE,st=".",st.space=""){
   # Objective: To pad dots (or other text) to tables for improved readability.
   #            This is a vectorized version

@@ -13,6 +13,8 @@ table.dots("k.elec",N=40,before=!FALSE,st=".",st.space=" ")
 
 \item{st}{is the dot-string (e.g. ".").}
 
+\item{st.space}{(e.g. " = ").}
+
 \item{txt}{vector of strings.}
 }
 \value{
