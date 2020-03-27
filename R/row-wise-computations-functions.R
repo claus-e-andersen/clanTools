@@ -29,17 +29,17 @@ rowMeans.ca <- function(df,vec){
 #' If name.vec is NULL, then assign the value given in null.default
 #' Used in: step42-electrometer-cal-single-file-009-6
 #' 
-#' Sample use: read.table(fn.full,sep=";",header=TRUE,quote = "\"",) %>%
+#' Sample use: read.table(fn.full,sep=";",header=TRUE,quote = "\"",) \%>\%
 #' 
-#'            filter(step.i %in% use.these.steps) %>%
+#'            filter(step.i \%in\% use.these.steps) \%>\%
 #'            
-#'            mutate(V.base = get.selected.data(.,V.base.use.vec)) %>%
+#'            mutate(V.base = get.selected.data(.,V.base.use.vec)) \%>\%
 #'            
-#'            mutate(V.raw = get.selected.data(.,V.use.vec)) %>%
+#'            mutate(V.raw = get.selected.data(.,V.use.vec)) \%>\%
 #'            
 #'            mutate(V.ref = V.raw - V.base)
 #'             
-#' @usage df %>% mutate(V.base = get.selected.data(.,V.base.use.vec)) 
+#' @usage df \%>\% mutate(V.base = get.selected.data(.,V.base.use.vec)) 
 #' @name get.selected.data
 #' @author Claus E. Andersen
 #' @return string vector
@@ -109,7 +109,7 @@ get.selected.data <- function(df,name.vec,null.default=0.0){
 #' Useful function for extracting data and combining data based on a vector of column names in a dataframe.
 #' See \ling{get.selected.data}.
 #' Here we compute (row by row) the standard deviation of the selected colums
-#' @usage  df %>% mutate(V.raw.sd = get.selected.data.sd(.,V.use.vec)) 
+#' @usage  df \%>\% mutate(V.raw.sd = get.selected.data.sd(.,V.use.vec)) 
 #' @name get.selected.data.sd
 #' @author Claus E. Andersen
 #' @return string vector

@@ -4,7 +4,7 @@
 \alias{get.selected.data.sd}
 \title{Improved function for computation of row means (row-wise means).}
 \usage{
-df %>% mutate(V.raw.sd = get.selected.data.sd(.,V.use.vec))
+df \%>\% mutate(V.raw.sd = get.selected.data.sd(.,V.use.vec))
 }
 \arguments{
 \item{df}{data frame}

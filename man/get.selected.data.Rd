@@ -4,7 +4,7 @@
 \alias{get.selected.data}
 \title{Improved function for computation of row means (row-wise means).}
 \usage{
-df %>% mutate(V.base = get.selected.data(.,V.base.use.vec))
+df \%>\% mutate(V.base = get.selected.data(.,V.base.use.vec))
 }
 \arguments{
 \item{df}{data frame}
@@ -21,13 +21,13 @@ Useful function for extracting data and combining data based on a vector of colu
 If name.vec is NULL, then assign the value given in null.default
 Used in: step42-electrometer-cal-single-file-009-6
 
-Sample use: read.table(fn.full,sep=";",header=TRUE,quote = "\"",) %>%
+Sample use: read.table(fn.full,sep=";",header=TRUE,quote = "\"",) \%>\%
 
-           filter(step.i %in% use.these.steps) %>%
+           filter(step.i \%in\% use.these.steps) \%>\%
            
-           mutate(V.base = get.selected.data(.,V.base.use.vec)) %>%
+           mutate(V.base = get.selected.data(.,V.base.use.vec)) \%>\%
            
-           mutate(V.raw = get.selected.data(.,V.use.vec)) %>%
+           mutate(V.raw = get.selected.data(.,V.use.vec)) \%>\%
            
            mutate(V.ref = V.raw - V.base)
 }
