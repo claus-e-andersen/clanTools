@@ -20,7 +20,7 @@ string vector
 Useful function for extracting data and combining data based on a vector of column names in a dataframe.
 If name.vec is NULL, then assign the value given in null.default
 Used in: step42-electrometer-cal-single-file-009-6
-Se also \link{rowMeans.ca} \link{get.selected.data.sd}.
+Se also \link{rowMeans.ca} and \link{get.selected.data.sd}.
 
 Sample use: read.table(fn.full,sep=";",header=TRUE,quote = "\"",) \%>\%
 
