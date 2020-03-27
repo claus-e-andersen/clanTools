@@ -1,12 +1,12 @@
 #' @title  Print number to fit certain format. An alternative is used if this requires too many characters.
 #' @description This is a variation of sprintf, that checks if the formated results is too long. 
-#' @usage  sprintf.ca("%.5f", round(5.1,0),max.chars=9999)
+#' @usage  sprintf.ca("12:00", round(5.1,0),max.chars=9999)
 #' @name sprintf.ca 
 #' @author Claus E. Andersen
 #' @return formated number.
-#' @param format is the main format (e.g. "%.5f").
+#' @param format is the main format (e.g. "12:00").
 #' @param number to print (e.g. 10).
-#' @param format.alt is the alternative format (e.g. "%.4e").
+#' @param format.alt is the alternative format (e.g. "12:00").
 #' @param max.char is the maximum of characters the the format needs to fit (otherwise the alternative format is used).
 #' @export sprintf.ca 
 sprintf.ca <- function(format,number,format.alt="%.4e",max.chars=10){
