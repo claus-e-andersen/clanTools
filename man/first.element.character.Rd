@@ -2,19 +2,14 @@
 % Please edit documentation in R/misc-summary-functions.R
 \name{first.element.character}
 \alias{first.element.character}
-\alias{last.element.character}
 \title{Find first element and return as character.}
 \usage{
 first.element.character(1:10=
-
-last.element.character(1:10)
 }
 \arguments{
 \item{x}{input vector}
 }
 \value{
-string (single value)
-
 string (single value)
 }
 \description{
@@ -22,13 +17,7 @@ Find first element and return as character.
 See also \link{first.element.character}, \link{last.element.character}, \link{mean.for.numerics}, 
 \link{min.for.numerics}, \link{max.for.numerics}, and \link{number.of.nas}.
 Use case: see CBASE-cobalt-cal-single-100.R
-
-Find last element and return as character.
-See also \link{first.element.character}, \link{mean.for.numerics}, 
-\link{min.for.numerics}, \link{max.for.numerics}, and \link{number.of.nas}.
 }
 \author{
-Claus E. Andersen
-
 Claus E. Andersen
 }

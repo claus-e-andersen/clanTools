@@ -18,7 +18,7 @@ first.element.character <- function(x){as.character(x[1])}
 #' See also \link{first.element.character}, \link{mean.for.numerics}, 
 #' \link{min.for.numerics}, \link{max.for.numerics}, and \link{number.of.nas}.
 #' @usage  last.element.character(1:10)
-#' @name first.element.character
+#' @name last.element.character
 #' @author Claus E. Andersen
 #' @return string (single value)
 #' @param x input vector
