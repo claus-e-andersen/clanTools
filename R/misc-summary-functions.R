@@ -3,7 +3,7 @@
 #' Find first element and return as character.
 #' See also \link{first.element.character}, \link{last.element.character}, \link{mean.for.numerics}, 
 #' Use case: see CBASE-cobalt-cal-single-100.R
-#' #' \link{min.for.numerics}, \link{max.for.numerics}, and \link{mumber.of.nas}.
+#' #' \link{min.for.numerics}, \link{max.for.numerics}, and \link{number.of.nas}.
 #' @usage  first.element.character(1:10=
 #' @name first.element.character
 #' @author Claus E. Andersen
@@ -16,7 +16,7 @@ first.element.character <- function(x){as.character(x[1])}
 #' @description 
 #' Find last element and return as character.
 #' See also \link{first.element.character}, \link{mean.for.numerics}, 
-#' \link{min.for.numerics}, \link{max.for.numerics}, and \link{mumber.of.nas}.
+#' \link{min.for.numerics}, \link{max.for.numerics}, and \link{number.of.nas}.
 #' @usage  last.element.character(1:10)
 #' @name first.element.character
 #' @author Claus E. Andersen
@@ -29,12 +29,12 @@ last.element.character <- function(x){as.character(rev(rev(x)[1]))}
 #' @description 
 #' Find mean element, if numeric.
 #' See also \link{first.element.character}, 
-#' \link{min.for.numerics}, \link{max.for.numerics}, and \link{mumber.of.nas}.
+#' \link{min.for.numerics}, \link{max.for.numerics}, and \link{number.of.nas}.
 #' Use case: see CBASE-cobalt-cal-single-100.R
 #' @usage  mean.for.numerics(1:10)
 #' @name mean.for.numerics
 #' @author Claus E. Andersen
-#' @return string with given number of digits (single value)
+#' @return numeric with given number of significant digits (single value)
 #' @param x input vector
 #' @param digits number of digits in result
 #' @export mean.for.numerics
@@ -44,12 +44,12 @@ mean.for.numerics <- function(x,digits=5){ifelse(is.numeric(x),signif(mean(x,na.
 #' @description 
 #' Find minimum element, if numeric.
 #' See also \link{first.element.character}, \link{last.element.character}, \link{mean.for.numerics}, 
-#' \link{min.for.numerics}, \link{max.for.numerics}, and \link{mumber.of.nas}.
+#' \link{min.for.numerics}, \link{max.for.numerics}, and \link{number.of.nas}.
 #' Use case: see CBASE-cobalt-cal-single-100.R
 #' @usage  min.for.numerics(1:10)
 #' @name min.for.numerics
 #' @author Claus E. Andersen
-#' @return string with given number of digits (single value)
+#' @return numeric with given number of significant digits (single value)
 #' @param x input vector
 #' @param digits number of digits in result
 #' @export min.for.numerics
@@ -59,12 +59,12 @@ min.for.numerics <- function(x,digits=5){ifelse(is.numeric(x),signif(min(x,na.rm
 #' @description 
 #' Find maximum element, if numeric.
 #' See also \link{first.element.character}, \link{last.element.character}, \link{mean.for.numerics}, 
-#' \link{min.for.numerics}, and \link{mumber.of.nas}.
+#' \link{min.for.numerics}, and \link{number.of.nas}.
 #' Use case: see CBASE-cobalt-cal-single-100.R
 #' @usage  max.for.numerics(1:10)
 #' @name max.for.numerics
 #' @author Claus E. Andersen
-#' @return string with given number of digits (single value)
+#' @return numeric with given number of significant digits (single value)
 #' @param x input vector
 #' @param digits number of digits in result
 #' @export max.for.numerics

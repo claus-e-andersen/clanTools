@@ -21,11 +21,11 @@ string (single value)
 Find first element and return as character.
 See also \link{first.element.character}, \link{last.element.character}, \link{mean.for.numerics}, 
 Use case: see CBASE-cobalt-cal-single-100.R
-#' \link{min.for.numerics}, \link{max.for.numerics}, and \link{mumber.of.nas}.
+#' \link{min.for.numerics}, \link{max.for.numerics}, and \link{number.of.nas}.
 
 Find last element and return as character.
 See also \link{first.element.character}, \link{mean.for.numerics}, 
-\link{min.for.numerics}, \link{max.for.numerics}, and \link{mumber.of.nas}.
+\link{min.for.numerics}, \link{max.for.numerics}, and \link{number.of.nas}.
 }
 \author{
 Claus E. Andersen

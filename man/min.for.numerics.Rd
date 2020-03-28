@@ -12,12 +12,12 @@ min.for.numerics(1:10)
 \item{digits}{number of digits in result}
 }
 \value{
-string with given number of digits (single value)
+numeric with given number of significant digits (single value)
 }
 \description{
 Find minimum element, if numeric.
 See also \link{first.element.character}, \link{last.element.character}, \link{mean.for.numerics}, 
-\link{min.for.numerics}, \link{max.for.numerics}, and \link{mumber.of.nas}.
+\link{min.for.numerics}, \link{max.for.numerics}, and \link{number.of.nas}.
 Use case: see CBASE-cobalt-cal-single-100.R
 }
 \author{
