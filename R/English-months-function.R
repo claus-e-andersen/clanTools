@@ -1,6 +1,7 @@
-#' @title  Print names of months in English
+#' @title  Print names of months in English from given month number (1-12).
 #' @description 
-#' Convert numbers from 1 to 12 into "January", "February" etc.
+#' Convert numbers 1 to 12 into "January", "February" etc.
+#' Note that the input can also be strings like "01", "02" etc.
 #' This version handles vectorized input, and NA's and NULL.
 #' See also: \link{dayno.calc} \link{conv.ref.date} \link{dayno.clock.reversed} \link{dayno.clock} \link{get.date.range}
 #' @usage  English.months(1)
@@ -13,7 +14,11 @@ English.months <- function(i=1){
   mvec<-c("January","February","March","April","May","June","July","August","September","October","November","December")
   if(is.null(i)) {i <- NA}
   res <- rep("Not.a.valid.month",length(i)) 
+
+  # Convert character (like "03") to numeric (like 3).
+  if(class(i)=="character"){i <- as.numeric(i)}
   
+  English.months(txt)  
   ok <- !is.na(i) & (i>=1) & (i<=12)
   if(sum(ok)>0){
     j <- 1:length(i)
