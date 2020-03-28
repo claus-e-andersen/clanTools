@@ -22,7 +22,7 @@ string vector
 }
 \description{
 Objective: To pad dots (or other text) to tables for improved readability. 
-See also: \link{table.dots.vec}.
+See also: \link{table.dots.vec} and \link{substring.with.dots}.
 Sample call: 
 
 table.dots("k.elec",N=40,before=!FALSE,st=".",st.space=" ")

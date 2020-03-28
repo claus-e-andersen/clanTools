@@ -1,7 +1,7 @@
 #' @title  To pad dots (or other text) to tables for improved readability.
 #' @description 
 #' Objective: To pad dots (or other text) to tables for improved readability. 
-#' See also: \link{table.dots.vec}.
+#' See also: \link{table.dots.vec} and \link{substring.with.dots}.
 #' Sample call: 
 #' 
 #' table.dots("k.elec",N=40,before=!FALSE,st=".",st.space=" ")
@@ -57,7 +57,7 @@ table.dots <- function(txt,N=40,before=TRUE,st=".",st.space=""){
 #' @title  To pad dots (or other text) to tables for improved readability. This is a vectorized version.
 #' @description 
 #' Objective: To pad dots (or other text) to tables for improved readability.
-#' This is a vectorized version. See also \link{table.dots}.
+#' This is a vectorized version. See also \link{table.dots} and \link{substring.with.dots}.
 #' Sample call: 
 #' 
 #' table.dots.vec(c("k.elec","k.elec.pos","k.elec.mean"),N=40,before=FALSE,st=".",st.space=" ") 
@@ -98,3 +98,45 @@ table.dots.vec <- function(txt.vec,N=40,before=TRUE,st=".",st.space=""){
   txt.vec.out
 }# table.dots.vec
 
+
+
+#' @title  To pad dots (or other text) to tables for improved readability.
+#' @description 
+#' Objective: truncate string to n chars and pad with dots in front
+#' behind depending on reverse.
+#' Example:
+#' 
+#' substring.with.dots("Hello")
+#' 
+#' gives the following output:
+#' 
+#' "Hello .............."
+#' 
+#' See also \link{table.dots}.
+#' @usage substring.with.dots("Hello")
+#' @name substring.with.dots
+#' @author Claus E. Andersen
+#' @return string (vectorized)
+#' @param x is a vector of input values
+#' @param n combined length (incl. dots)
+#' @param reverse (FALSE = x then dots, TRUE = dots then x)
+#' @param st is the dot-character (i.e. normally ".").
+#' @export substring.with.dots
+substring.with.dots <- function(x,n=20,reverse=FALSE,st="."){
+  # Created: Feb. 22, 2015
+  # revised: March 28, 2020
+  # Objective: truncate string to n chars and pad with dots in front
+  # or behind depending on reverse.
+  x <- substring(x,1,n)
+  pp <- paste(rep(st,n),collapse='')
+  if(reverse){
+    y <- paste(pp,x)
+    nn <- nchar(y)
+    res <- substring(y,pmax(1,nn-n),nn)
+  } else {
+    y <- paste(x,pp)
+    nn <- nchar(y)
+    res <- substring(y,1,n)
+  }
+  res
+}# substring.with.dots
