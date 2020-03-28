@@ -24,7 +24,7 @@ rowMeans.ca <- function(df,vec){
 
 
 
-#' @title  Improved function for computation of row means (row-wise means).
+#' @title  Extract columns from dataframe and compute row means (row-wise means).
 #' @description
 #' Useful function for extracting data and combining data based on a vector of column names in a dataframe.
 #' If name.vec is NULL, then assign the value given in null.default
@@ -105,7 +105,7 @@ get.selected.data <- function(df,name.vec,null.default=0.0){
 }# get.selected.data
 
 
-#' @title  Improved function for computation of row means (row-wise means).
+#' @title  Extract columns from dataframe and compute row standard deviations (row-wise standard deviations).
 #' @description
 #' Useful function for extracting data and combining data based on a vector of column names in a dataframe.
 #' Useful function for extracting data and combining data based on a vector of column names in a dataframe.

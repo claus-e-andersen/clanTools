@@ -2,7 +2,7 @@
 % Please edit documentation in R/row-wise-computations-functions.R
 \name{get.selected.data}
 \alias{get.selected.data}
-\title{Improved function for computation of row means (row-wise means).}
+\title{Extract columns from dataframe and compute row means (row-wise means).}
 \usage{
 df \%>\% mutate(V.base = get.selected.data(.,V.base.use.vec))
 }

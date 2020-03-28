@@ -2,7 +2,7 @@
 % Please edit documentation in R/row-wise-computations-functions.R
 \name{get.selected.data.sd}
 \alias{get.selected.data.sd}
-\title{Improved function for computation of row means (row-wise means).}
+\title{Extract columns from dataframe and compute row standard deviations (row-wise standard deviations).}
 \usage{
 df \%>\% mutate(V.raw.sd = get.selected.data.sd(.,V.use.vec))
 }
