@@ -18,7 +18,6 @@ English.months <- function(i=1){
   # Convert character (like "03") to numeric (like 3).
   if(class(i)=="character"){i <- as.numeric(i)}
   
-  English.months(txt)  
   ok <- !is.na(i) & (i>=1) & (i<=12)
   if(sum(ok)>0){
     j <- 1:length(i)
