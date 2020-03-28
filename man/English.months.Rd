@@ -15,6 +15,7 @@ string vector
 \description{
 Convert numbers from 1 to 12 into "January", "February" etc.
 This version handles vectorized input, and NA's and NULL.
+See also: \link{dayno.calc} \link{conv.ref.date} \link{dayno.clock.reversed} \link{dayno.clock} \link{get.date.range}
 }
 \author{
 Claus E. Andersen

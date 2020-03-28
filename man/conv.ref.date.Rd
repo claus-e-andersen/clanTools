@@ -4,7 +4,7 @@
 \alias{conv.ref.date}
 \title{Compute dayno from a written date like March 22, 2018}
 \usage{
-#' get.date.range(x=c("01-01-2020","31-01-2020"))
+conv.ref.date("March 22, 2018, 12:00")
 }
 \arguments{
 \item{ref.date.vec}{vector with dates in the format "March 22, 2018".}
@@ -19,8 +19,12 @@
 dateframe with detailed info (see example)
 }
 \description{
-Convert date strings of the type March 22, 2018 to day numbers
-since 01.01.2014 or some other zero date (reference). 
+Compute the number of days (i.e. the dayno) between a date in the format "March 22, 2018" 
+to some reference (the zero date) such as 01.01.2014. The function has been developed
+to validate dates related to the cobaly-60 irradiations. 
+
+Note that the match to English spelling of months only uses the
+first three letters.  
 Sample call: 
 
  conv.ref.date("March 22, 2018, 12:00")
@@ -36,7 +40,15 @@ Sample call:
         
         March 21, 2018 21 3 2018 21.03.2018  -0.5
         
-        March 22, 2019 22 3 2019 22.03.2019 365.5
+        March 22, 2019 22 3 2019 22.03.2019 365.5 
+
+Note that this requires chron:
+
+install.packages("chron")
+
+require(chron)
+
+See also: \link{dayno.calc} \link{dayno.clock.reversed} \link{dayno.clock} \link{English.months} \link{get.date.range}
 }
 \author{
 Claus E. Andersen

@@ -21,6 +21,7 @@ The difference between the given time stamp and the reference time stamp in numb
 \description{
 Dates and wall-clock times are used as input. The output is in number of days .
 Note: 1) Any delimiter will do, 2) seconds are option
+See also: \link{conv.ref.date} \link{dayno.clock.reversed} \link{dayno.clock} \link{English.months} \link{get.date.range}
 }
 \author{
 Claus E. Andersen

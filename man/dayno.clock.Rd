@@ -15,6 +15,7 @@ vector with fractional day numbers
 \description{
 Convert from wall-clock time to fraction of day.
 Note: 1) Any delimiter will do, 2) seconds are option
+See also: \link{dayno.calc} \link{conv.ref.date} \link{dayno.clock.reversed} \link{English.months} \link{get.date.range}
 }
 \author{
 Claus E. Andersen

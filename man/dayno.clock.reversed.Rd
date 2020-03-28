@@ -5,6 +5,7 @@
 \title{Convert from  fraction of day to wall-clock time.}
 \usage{
 dayno.clock.reversed(c(0.0,0.3,4444.5))
+See also: \link{dayno.calc} \link{conv.ref.date} \link{dayno.clock} \link{English.months} \link{get.date.range}
 }
 \arguments{
 \item{Ttime}{is the time to be converted}

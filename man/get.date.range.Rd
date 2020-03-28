@@ -4,7 +4,7 @@
 \alias{get.date.range}
 \title{Make string with range of dates (eg. for calibration certificates)}
 \usage{
-#' get.date.range(x=c("01-01-2020","31-01-2020"))
+get.date.range(x=c("01-01-2020","31-01-2020"))
 }
 \arguments{
 \item{x}{vector with dates in the format "31-01-2020".}
@@ -16,6 +16,7 @@ string with human readable text.
 Compute the range of dates and present results using English months, like
 "January 01, 2020 -- January 31, 2020". If there is only one date, then
 the output will be something like "January 01, 2020 (one day only)".
+See also: \link{dayno.calc} \link{conv.ref.date} \link{dayno.clock.reversed} \link{dayno.clock} \link{English.months} 
  
 Example:
 

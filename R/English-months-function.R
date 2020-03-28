@@ -2,6 +2,7 @@
 #' @description 
 #' Convert numbers from 1 to 12 into "January", "February" etc.
 #' This version handles vectorized input, and NA's and NULL.
+#' See also: \link{dayno.calc} \link{conv.ref.date} \link{dayno.clock.reversed} \link{dayno.clock} \link{get.date.range}
 #' @usage  English.months(1)
 #' @name English.months
 #' @author Claus E. Andersen
@@ -29,6 +30,7 @@ English.months <- function(i=1){
 #' Compute the range of dates and present results using English months, like
 #' "January 01, 2020 -- January 31, 2020". If there is only one date, then
 #' the output will be something like "January 01, 2020 (one day only)".
+#' See also: \link{dayno.calc} \link{conv.ref.date} \link{dayno.clock.reversed} \link{dayno.clock} \link{English.months} 
 #'  
 #' Example:
 #' 
@@ -38,7 +40,7 @@ English.months <- function(i=1){
 #' 
 #' get.date.range(x=c("01-01-2020","31-01-2020"))
 #' 
-#' @usage  #' get.date.range(x=c("01-01-2020","31-01-2020"))
+#' @usage get.date.range(x=c("01-01-2020","31-01-2020"))
 #' @name get.date.range
 #' @author Claus E. Andersen
 #' @return string with human readable text.
@@ -66,8 +68,12 @@ get.date.range <- function(x){
 
 #' @title Compute dayno from a written date like March 22, 2018
 #' @description 
-#' Convert date strings of the type March 22, 2018 to day numbers
-#' since 01.01.2014 or some other zero date (reference). 
+#' Compute the number of days (i.e. the dayno) between a date in the format "March 22, 2018" 
+#' to some reference (the zero date) such as 01.01.2014. The function has been developed
+#' to validate dates related to the cobaly-60 irradiations. 
+#' 
+#' Note that the match to English spelling of months only uses the
+#' first three letters.  
 #' Sample call: 
 #' 
 #'  conv.ref.date("March 22, 2018, 12:00")
@@ -85,7 +91,14 @@ get.date.range <- function(x){
 #'         
 #'         March 22, 2019 22 3 2019 22.03.2019 365.5 
 #' 
-#' @usage  #' get.date.range(x=c("01-01-2020","31-01-2020"))
+#' Note that this requires chron:
+#' 
+#' install.packages("chron")
+#' 
+#' require(chron)
+#' 
+#' See also: \link{dayno.calc} \link{dayno.clock.reversed} \link{dayno.clock} \link{English.months} \link{get.date.range}
+#' @usage conv.ref.date("March 22, 2018, 12:00")
 #' @name conv.ref.date
 #' @author Claus E. Andersen
 #' @return dateframe with detailed info (see example)

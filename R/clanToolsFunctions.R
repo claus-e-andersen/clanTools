@@ -644,6 +644,7 @@ create.latex.table <-
 #' @title  Convert from wall-clock time to fraction of day
 #' @description Convert from wall-clock time to fraction of day.
 #' Note: 1) Any delimiter will do, 2) seconds are option
+#' See also: \link{dayno.calc} \link{conv.ref.date} \link{dayno.clock.reversed} \link{English.months} \link{get.date.range}
 #' @usage  dayno.clock(c("12:00","23:59","00:00:59","12.00.30","23x30"))
 #' @name dayno.clock 
 #' @author Claus E. Andersen
@@ -665,6 +666,7 @@ dayno.clock <- function(Ttime="00:00"){
 #' @title  Calculate the difference between two time stamps
 #' @description Dates and wall-clock times are used as input. The output is in number of days .
 #' Note: 1) Any delimiter will do, 2) seconds are option
+#' See also: \link{conv.ref.date} \link{dayno.clock.reversed} \link{dayno.clock} \link{English.months} \link{get.date.range}
 #' @usage  dayno.clock(c("12:00","23:59","00:00:59","12.00.30","23x30"))
 #' @name dayno.calc 
 #' @author Claus E. Andersen
@@ -693,6 +695,7 @@ dayno.calc <- function(Tday="31.01.2001",Ttime="00:00",ref.date="31.12.2000",ref
 #' Likewise, for example, 0.0 ane 1.0 both convert to "00:00" (Not "24:00").
 #' Sample call: dayno.clock.reversed(c(0.0,0.3,4444.5)) (returns: "00:00",""07:12","12:00")
 #' @usage  dayno.clock.reversed(c(0.0,0.3,4444.5))
+#' See also: \link{dayno.calc} \link{conv.ref.date} \link{dayno.clock} \link{English.months} \link{get.date.range}
 #' @name dayno.clock.reversed 
 #' @author Claus E. Andersen
 #' @return vector with fractional day numbers
