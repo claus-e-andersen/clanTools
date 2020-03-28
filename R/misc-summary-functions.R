@@ -2,8 +2,8 @@
 #' @description 
 #' Find first element and return as character.
 #' See also \link{first.element.character}, \link{last.element.character}, \link{mean.for.numerics}, 
+#' \link{min.for.numerics}, \link{max.for.numerics}, and \link{number.of.nas}.
 #' Use case: see CBASE-cobalt-cal-single-100.R
-#' #' \link{min.for.numerics}, \link{max.for.numerics}, and \link{number.of.nas}.
 #' @usage  first.element.character(1:10=
 #' @name first.element.character
 #' @author Claus E. Andersen
