@@ -2,7 +2,45 @@ clanTools
 =========
 
 This R package contains tools that are useful for general data analysis and reporting of results.
-Installation instructions are given at the end of the page.
+Selected functions are given at the end of the page.
+
+
+To install this package do the following:
+
+(1) First get the devtools package, if you do not already have it:
+
+install.packages("devtools")
+
+library(devtools)
+
+
+
+(2) Then get the clanTools package from github:
+
+install_github("claus-e-andersen/clanTools")
+
+library(clanTools)
+
+
+To get a list of functions in the library, just call:
+?clanTools
+
+and click at index link at the bottom of the page.
+
+
+(3) The following packages are required to fully use the function in the library:
+
+require(chron)
+
+require(dplyr)
+
+
+-------------------------------------------------
+
+Selected fulctions
+
+-------------------------------------------------
+
 
 clan.install:
 List of recommended R packages to install.
@@ -75,31 +113,3 @@ on screen or to files.
 
 
   
-To install this package do the following:
-
-(1) First get the devtools package, if you do not already have it:
-
-install.packages("devtools")
-
-library(devtools)
-
-
-
-(2) Then get the clanTools package from github:
-
-install_github("claus-e-andersen/clanTools")
-
-library(clanTools)
-
-
-To get a list of functions in the library, just call:
-?clanTools
-
-and click at index link at the bottom of the page.
-
-(4) The following packages are required to fully use the function in the library:
-
-require(chron)
-
-require(dplyr)
-
