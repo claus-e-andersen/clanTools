@@ -87,16 +87,19 @@ library(devtools)
 
 (2) Then get the clanTools package from github:
 
-install_github("clanTools","claus-e-andersen")
+install_github("claus-e-andersen/clanTools")
 
 library(clanTools)
 
 
-(3) To get a list of functions in the library, just call:
+To get a list of functions in the library, just call:
+?clanTools
 
-help(package=clanTools)
+and click at index link at the bottom of the page.
 
-or
+(4) The following packages are required to fully use the function in the library:
 
-library(help=clanTools)
+require(chron)
+
+require(dplyr)
 
