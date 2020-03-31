@@ -9,6 +9,8 @@ Description: An R library of functions for general use in data analysis and
 URL: www.dtu.dk
 Depends:
     R (>= 3.1.1)
+Imports:
+    chron
 License: GPL (>= 3)
 Repository: GITHUB / claus-e-andersen
 LazyData: true
