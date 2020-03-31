@@ -682,8 +682,8 @@ dayno.calc <- function(Tday="31.01.2001",Ttime="00:00",ref.date="31.12.2000",ref
   # Sample call: dayno.calc("10.01.2001",ref.date="31.12.2000",ref.time="24:00:00")
   # Revised: July 10, 2001, Claus E. Andersen
   # Revised for R: June 2, 2012 (requires chron library)
-  dayno.ref <- as.integer(dates(as.character(ref.date),format="d.m.y"))+as.double(dayno.clock(ref.time))
-  dayno.day <- as.integer(dates(as.character(Tday),format="d.m.y"))-dayno.ref
+  dayno.ref <- as.integer(chron::dates(as.character(ref.date),format="d.m.y"))+as.double(dayno.clock(ref.time))
+  dayno.day <- as.integer(chron::dates(as.character(Tday),format="d.m.y"))-dayno.ref
   dayno.time <- as.double(dayno.clock(Ttime))
   dayno <- as.double(dayno.day)+dayno.time
   return(dayno)
