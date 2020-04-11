@@ -118,7 +118,7 @@ get.selected.data <- function(df,name.vec,null.default=0.0){
 #' @param df data frame
 #' @param name.vec names of rows. 
 #' @param null.default (e.g. 0.0).
-#' @export get.selected.data
+#' @export get.selected.data.sd
 get.selected.data.sd <- function(df,name.vec,null.default=0.0){
     # Useful function for extracting data and combining data based on a vector of column names in a dataframe.
     # See get.selected.data
