@@ -13,7 +13,6 @@
 #''@param df the larger data frame
 #' @param action what to do in case of error (="Stop.if.error" is default)
 #' @export check.data.before.rbind
-
 check.data.before.rbind <- function(df.small, df, action="Stop.if.error"){
   # Objective: Test before df <- rbind(df,df.small)
   # Created  : November 14, 2019
