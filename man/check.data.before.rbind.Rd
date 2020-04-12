@@ -6,8 +6,6 @@
 \usage{
 check.data.before.rbind(df0,df)
 if(is.null(df)){df <- df0} {df <- rbind(df,df0)}
-
-df \%>\% mutate(V.raw.sd = get.selected.data.sd(.,V.use.vec))
 }
 \arguments{
 \item{df.small}{data frame to be rbinded with a larger dataframe (df)

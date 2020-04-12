@@ -5,7 +5,6 @@
 #' check.data.before.rbind(df0,df)
 #' if(is.null(df)){df <- df0} {df <- rbind(df,df0)}
 #' 
-#' df \%>\% mutate(V.raw.sd = get.selected.data.sd(.,V.use.vec)) 
 #' @name check.data.before.rbind
 #' @author Claus E. Andersen
 #' @return nothing (printed statement)
@@ -47,6 +46,7 @@ check.data.before.rbind <- function(df.small, df, action="Stop.if.error"){
       print(df.test)
       print(paste("Number or errors =",N.errors))
     } # some errors
+    
   } # not null
   
   if(all.ok){ print("check.data.before.rbind: ALL ok")} else {print("check.data.before.rbind: ERROR. Data in df.small do not match df."); stop("Sorry, but I quit!")}
