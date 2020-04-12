@@ -9,7 +9,7 @@
 #' @author Claus E. Andersen
 #' @return nothing (printed statement)
 #' @param df.small data frame to be rbinded with a larger dataframe (df)
-#''@param df the larger data frame
+#' @param df the larger data frame
 #' @param action what to do in case of error (="Stop.if.error" is default)
 #' @export check.data.before.rbind
 check.data.before.rbind <- function(df.small, df, action="Stop.if.error"){

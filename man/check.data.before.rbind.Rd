@@ -8,8 +8,9 @@ check.data.before.rbind(df0,df)
 if(is.null(df)){df <- df0} {df <- rbind(df,df0)}
 }
 \arguments{
-\item{df.small}{data frame to be rbinded with a larger dataframe (df)
-'@param df the larger data frame}
+\item{df.small}{data frame to be rbinded with a larger dataframe (df)}
+
+\item{df}{the larger data frame}
 
 \item{action}{what to do in case of error (="Stop.if.error" is default)}
 }
