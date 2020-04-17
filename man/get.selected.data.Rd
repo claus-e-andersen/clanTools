@@ -11,7 +11,7 @@ df \%>\% mutate(V.base = get.selected.data(.,V.base.use.vec))
 
 \item{name.vec}{names of rows.}
 
-\item{null.default}{value to use if there are no values (default to NA).}
+\item{null.default}{value to use if there are no values (default to NA). This should be a value of class equal to numeric.}
 }
 \value{
 string vector

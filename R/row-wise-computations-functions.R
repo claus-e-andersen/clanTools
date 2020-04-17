@@ -47,7 +47,7 @@ rowMeans.ca <- function(df,vec){
 #' @return string vector
 #' @param df data frame
 #' @param name.vec names of rows. 
-#' @param null.default value to use if there are no values (default to NA).
+#' @param null.default value to use if there are no values (default to NA). This should be a value of class equal to numeric. 
 #' @export get.selected.data
 get.selected.data <- function(df,name.vec,null.default=NA){
   # Useful function for extracting data and combining data based on a vector of column names in a dataframe.
@@ -75,7 +75,10 @@ get.selected.data <- function(df,name.vec,null.default=NA){
       # For some reason, the following line is required to make the results
       # work with dplyr.
       res <- res[,1] 
-      if(all(is.na(res))){res <- rep(null.default,nrow(df))} 
+      if(all(is.na(res))){
+        res <- rep(null.default,nrow(df))
+        class(res) <- "numeric"
+        } 
       ok <- class(res) %in% c("numeric","integer")
       if(!ok){
         print(res)
