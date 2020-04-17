@@ -47,9 +47,9 @@ rowMeans.ca <- function(df,vec){
 #' @return string vector
 #' @param df data frame
 #' @param name.vec names of rows. 
-#' @param null.default (e.g. 0.0).
+#' @param null.default value to use if there are no values (default to NA).
 #' @export get.selected.data
-get.selected.data <- function(df,name.vec,null.default=0.0){
+get.selected.data <- function(df,name.vec,null.default=NA){
   # Useful function for extracting data and combining data based on a vector of column names in a dataframe.
   # If name.vec is NULL, then assign the value given in null.default
   # Used in: step42-electrometer-cal-single-file-009-6
