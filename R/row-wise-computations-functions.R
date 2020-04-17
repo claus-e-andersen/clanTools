@@ -59,7 +59,19 @@ get.selected.data <- function(df,name.vec,null.default=NA){
   #             mutate(V.raw = get.selected.data(.,V.use.vec)) %>%
   #             mutate(V.ref = V.raw - V.base) %>%
   print(paste('get.selected.data',' ',name.vec))
-  if(is.null(name.vec)){res <- rep(null.default,nrow(df))} else {
+  if(is.null(name.vec)){
+    res <- rep(null.default,nrow(df))
+    } else {
+      
+      # Make columns with only NAs to be of numeric class
+      # Note the difference between NA (which will become logical-NA by default)
+      # and a numeric(NA). 
+      ok <-   sapply(df,function(x){all(is.na(x))})
+      if(sum(ok)>0){
+        df[,ok] <- as.numeric(NA)
+      }
+    
+    
     for(col.sel in name.vec){
       if(!col.sel %in% names(df)) stop(paste("Error.",col.sel,"was not found. \nname.vec:", paste(name.vec,collapse=" ")))
     }
