@@ -2,8 +2,8 @@
 #' @description 
 #' This function compute the relative standard uncertainty (k=1) for instruments
 #' with a given number of digits (say, 4) that is always used to their fullest
-#' extend (i.e. is a reading of 1 would actually be 1.000 and a 
-#' reading of 1.1E-9 would actually be 1.100 x 1E9). 
+#' extend (i.e. a reading of 1 would actually be 1.000 and a 
+#' reading of 1.1E-9 would actually be 1.100 x 1E-9). 
 #' 
 #' As the function gives the relative uncertainty, it cannot handle
 #' a reading which is zero (the function returns NA)..
@@ -16,7 +16,7 @@
 #' resolution uncertainty of about 0.029\%. Note that we assume that
 #' the instrument always provides the given number of digits.
 #' 
-#' See also: \link{resolution.uncertainty.pct} 
+#' See also: \link{resolution.uncertainty.abs} 
 #' 
 #' #' Example of a 0.029\% resolution uncertainty:
 #' 
@@ -28,7 +28,7 @@
 #'
 #' Note that the function is vectorized, such that calls like the following is possible:
 #' 
-#' resolution.uncertainty.pct(c(1.2, 1.3, 0, 0, NA, NA, 2) ,digits=4,last.digit.step=1)
+#' resolution.uncertainty.pct(c(1.2, 1.3, 0, 0, NA, NA, 2), digits=4,last.digit.step=1)
 #' 
 #' @usage  resolution.uncertainty.pct(1004,digits=4,last.digit.step=1)
 #' @name resolution.uncertainty.pct
@@ -81,8 +81,8 @@ resolution.uncertainty.pct <- function(x,digits=4,last.digit.step=1,min.value=0.
 #' @description 
 #' This function compute the standard uncertainty (k=1) for instruments
 #' with a given number of digits (say, 4) that is always used to their fullest
-#' extend (i.e. is a reading of 1 would actually be 1.000 and a 
-#' reading of 1.1E-9 would actually be 1.100 x 1E9). 
+#' extend (i.e. a reading of 1 would actually be 1.000 and a 
+#' reading of 1.1E-9 would actually be 1.100 x 1E-9). 
 #' 
 #' The function handles zero-readings.
 #'  
@@ -94,7 +94,7 @@ resolution.uncertainty.pct <- function(x,digits=4,last.digit.step=1,min.value=0.
 #' standard uncertainty of about 2.9e-4. Note that we assume that
 #' the instrument always provides the given number of digits.
 #' 
-#' See also: \link{resolution.uncertainty.abs} 
+#' See also: \link{resolution.uncertainty.pct} 
 #' 
 #' #' Example:
 #' 
@@ -106,12 +106,12 @@ resolution.uncertainty.pct <- function(x,digits=4,last.digit.step=1,min.value=0.
 #' 
 #' Note that the function is vectorized, such that calls like the following is possible:
 #' 
-#' resolution.uncertainty.abs(c(1.2, 1.3, 0, 0, NA, NA, 2) ,digits=4,last.digit.step=1)
+#' resolution.uncertainty.abs(c(1.2, 1.3, 0, 0, NA, NA, 2), digits=4,last.digit.step=1)
 #' 
 #' @usage  resolution.uncertainty.pct(1004,digits=4,last.digit.step=1)
 #' @name resolution.uncertainty.abs
 #' @author Claus E. Andersen
-#' @return numeric value (pct uncertainty). May be vectorixed.
+#' @return numeric value (absolute uncertainty). May be vectorixed.
 #' @param x raw reading (can be vectorized).
 #' @param digits number of digits on the instrument display.
 #' @param last.digit.step resolution of last digit (e.g. 1 or 5).

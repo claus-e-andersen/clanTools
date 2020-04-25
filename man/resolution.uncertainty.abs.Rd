@@ -18,13 +18,13 @@ resolution.uncertainty.pct(1004,digits=4,last.digit.step=1)
 \item{max.value}{do not report an uncertainty above this value (e.g. 50 in abs. units).}
 }
 \value{
-numeric value (pct uncertainty). May be vectorixed.
+numeric value (absolute uncertainty). May be vectorixed.
 }
 \description{
 This function compute the standard uncertainty (k=1) for instruments
 with a given number of digits (say, 4) that is always used to their fullest
-extend (i.e. is a reading of 1 would actually be 1.000 and a 
-reading of 1.1E-9 would actually be 1.100 x 1E9). 
+extend (i.e. a reading of 1 would actually be 1.000 and a 
+reading of 1.1E-9 would actually be 1.100 x 1E-9). 
 
 The function handles zero-readings.
  
@@ -36,7 +36,7 @@ with 1 (like 1.002) will lead to an estimated
 standard uncertainty of about 2.9e-4. Note that we assume that
 the instrument always provides the given number of digits.
 
-See also: \link{resolution.uncertainty.abs} 
+See also: \link{resolution.uncertainty.pct} 
 
 #' Example:
 
@@ -48,7 +48,7 @@ resolution.uncertainty.abs(1.1e20,digits=4,last.digit.step=1)
 
 Note that the function is vectorized, such that calls like the following is possible:
 
-resolution.uncertainty.abs(c(1.2, 1.3, 0, 0, NA, NA, 2) ,digits=4,last.digit.step=1)
+resolution.uncertainty.abs(c(1.2, 1.3, 0, 0, NA, NA, 2), digits=4,last.digit.step=1)
 }
 \author{
 Claus E. Andersen
