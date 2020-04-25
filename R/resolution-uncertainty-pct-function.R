@@ -1,4 +1,4 @@
-#' @title  Compute the resolution uncertainty (last digit influence) - relative version (%)
+#' @title  Compute the resolution uncertainty (last digit influence) - relative version (\%)
 #' @description 
 #' This function compute the relative standard uncertainty (k=1) for instruments
 #' with a given number of digits (say, 4) that is always used to their fullest
