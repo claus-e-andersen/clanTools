@@ -2,7 +2,7 @@
 % Please edit documentation in R/resolution-uncertainty-pct-function.R
 \name{resolution.uncertainty.pct}
 \alias{resolution.uncertainty.pct}
-\title{Compute the resolution uncertainty (last digit influence)}
+\title{Compute the resolution uncertainty (last digit influence) - relative version (%)}
 \usage{
 resolution.uncertainty.pct(1004,digits=4,last.digit.step=1)
 }

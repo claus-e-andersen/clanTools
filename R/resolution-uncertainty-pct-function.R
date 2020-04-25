@@ -1,4 +1,4 @@
-#' @title  Compute the resolution uncertainty (last digit influence)
+#' @title  Compute the resolution uncertainty (last digit influence) - relative version (%)
 #' @description 
 #' This function compute the relative standard uncertainty (k=1) for instruments
 #' with a given number of digits (say, 4) that is always used to their fullest
@@ -77,7 +77,7 @@ resolution.uncertainty.pct <- function(x,digits=4,last.digit.step=1,min.value=0.
   res
 } # resolution.uncertainty.pct
 
-#' @title  Compute the resolution uncertainty (last digit influence)
+#' @title  Compute the resolution uncertainty (last digit influence) - absolute version
 #' @description 
 #' This function compute the standard uncertainty (k=1) for instruments
 #' with a given number of digits (say, 4) that is always used to their fullest
@@ -108,7 +108,7 @@ resolution.uncertainty.pct <- function(x,digits=4,last.digit.step=1,min.value=0.
 #' 
 #' resolution.uncertainty.abs(c(1.2, 1.3, 0, 0, NA, NA, 2), digits=4,last.digit.step=1)
 #' 
-#' @usage  resolution.uncertainty.pct(1004,digits=4,last.digit.step=1)
+#' @usage  resolution.uncertainty.abs(1004,digits=4,last.digit.step=1)
 #' @name resolution.uncertainty.abs
 #' @author Claus E. Andersen
 #' @return numeric value (absolute uncertainty). May be vectorixed.
