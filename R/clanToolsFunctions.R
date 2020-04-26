@@ -429,14 +429,16 @@ if(is.null(x) || is.na(x) ) {x.txt <- as.character(x)} else {
 #' @author Claus E. Andersen
 #' @return A vectorof strings with the rounded numbers.
 #' @param x is a vector of numbers
-#' @param resolution is the number of significant digits
-#' @param resolution.zero is the number of fixed-number-of-digits near zero.
+#' @param resolution is the number of significant digits (i.e. 3 could mean 1.23 or 0.123e-23).
+#' @param resolution.zero is the number of decimal places after the point (.) near zero (i.e. 3 could mean 0.001 or 95599.000).
 #' @param take.as.zero: positive number below which we apply the fixed-number-of-digits approach. For a negative number, no such special approach is taken.
 #' @param print.for.na is the value printed for NAs.
 #' @param method is the method used to determine significance (default method = "signif").
+#'@param remove.lonely.point Make sure that we do not get results like "2000." (i.e. a lonely point).
 #' @export signif.res
-signif.res <- function(x, resolution=6, resolution.zero=4, take.as.zero=1e-4, print.for.na="Not avail.", method="signif"){
+signif.res <- function(x, resolution=6, resolution.zero=4, take.as.zero=1e-4, print.for.na="Not avail.", method="signif",remove.lonely.point=TRUE){
   # March 26, 2020
+  # April 26, 2020
   # Format number after number digits including tailing zeros
   # Sample call: signif.res(c(1.26763,0.00123,1,0.0011,1e-19,1.1e-4,NA),2) 
   # If a number is below the take.as.zero, then we apply the fixed-number-of-digits approach.
@@ -465,6 +467,11 @@ signif.res <- function(x, resolution=6, resolution.zero=4, take.as.zero=1e-4, pr
   if(sum(ok)>0){
     x.txt[ok] <- print.for.na
   }
+  
+  if(remove.lonely.point){
+    # Make sure that we do not get results like "2000." (i.e. a lonely point).
+    x.txt <- gsub('.(\\s*)$',"",x.txt)
+    }
   return(x.txt)
 } # end signif.res
 
