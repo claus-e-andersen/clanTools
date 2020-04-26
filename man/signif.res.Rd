@@ -9,13 +9,15 @@ signif.res(c(1.26763,0.00123,1,0.0011,1e-19,1.1e-4,NA),2)
 \arguments{
 \item{x}{is a vector of numbers}
 
-\item{resolution}{is the number of significant digits}
+\item{resolution}{is the number of significant digits (i.e. 3 could mean 1.23 or 0.123e-23).}
 
-\item{resolution.zero}{is the number of fixed-number-of-digits near zero.}
+\item{resolution.zero}{is the number of decimal places after the point (.) near zero (i.e. 3 could mean 0.001 or 95599.000).}
 
 \item{print.for.na}{is the value printed for NAs.}
 
 \item{method}{is the method used to determine significance (default method = "signif").}
+
+\item{remove.lonely.point}{Make sure that we do not get results like "2000." (i.e. a lonely point).}
 
 \item{take.as.zero:}{positive number below which we apply the fixed-number-of-digits approach. For a negative number, no such special approach is taken.}
 }
