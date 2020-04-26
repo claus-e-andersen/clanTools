@@ -470,7 +470,7 @@ signif.res <- function(x, resolution=6, resolution.zero=4, take.as.zero=1e-4, pr
   
   if(remove.lonely.point){
     # Make sure that we do not get results like "2000." (i.e. a lonely point).
-    x.txt <- gsub('\\.(\\s*)$',"",x.txt)
+    x.txt <- gsub('.(\\s*)$',"",x.txt)
     }
   return(x.txt)
 } # end signif.res
