@@ -437,7 +437,7 @@ if(is.null(x) || is.na(x) ) {x.txt <- as.character(x)} else {
 #'@param remove.lonely.point Make sure that we do not get results like "2000." (i.e. a lonely point).
 #' @export signif.res
 signif.res <- function(x, resolution=6, resolution.zero=4, take.as.zero=1e-4, print.for.na="Not avail.", method="signif",remove.lonely.point=TRUE){
-  # March 26, 2020
+  # March 26, 2020  
   # April 26, 2020
   # Format number after number digits including tailing zeros
   # Sample call: signif.res(c(1.26763,0.00123,1,0.0011,1e-19,1.1e-4,NA),2) 
