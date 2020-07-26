@@ -112,7 +112,7 @@ table.dots.vec <- function(txt.vec,N=40,before=TRUE,st=".",st.space=""){
 #' 
 #' "Hello .............."
 #' 
-#' See also \link{table.dots}.
+#' See also \link{table.dots} and \link{substring.with.dots.adv}.
 #' @usage substring.with.dots("Hello")
 #' @name substring.with.dots
 #' @author Claus E. Andersen
@@ -169,6 +169,7 @@ extract.last.part.of.string <- function(x="string",n=3){
 #' we are not seeing the full string. This function does that plus it can 
 #' pad dots or other symbons before of after the string, if it is not
 #' long.
+#' See also \link{table.dots} and \link{substring.with.dots}.
 #' @usage 
 #' substring.with.dots.adv(c("Hello","khdskhdsjkdkahdshkdhkahskaksdjh"),n=15,reverse=!TRUE,n.last=5)
 #' print(c("Hello ........." ,"khdskhd...aksdj"))
