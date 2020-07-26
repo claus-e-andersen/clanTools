@@ -762,6 +762,10 @@ thermistor.ohm <- function(degC=25.0, b=c(0*5.21570,0*4294.32,0*310)){
   exp(b[2]/(degC+b[3]) - b[1])
 }
 
+
+
+
+
 #' @title  Template for graphical output 
 #' @description  Template for graphical output using pdf, ps or png format.
 #' # Recommended workflow for making PowerPoint reports:
@@ -865,8 +869,8 @@ clan.install <- function(repos="http://cran.r-project.org",force=TRUE){
 #' @export 
 clanTools <- function(){
   list(name="clanTools",
-       version=0.010,
-       date="March 28, 2020",
+       version=0.011,
+       date="July 26, 2020",
        functions=sort(c("clanTools","clan.install","wrline",
                         "replacechar","substitute.char","extract.first.number","extract.given.number",
                         "leading.zeros","leading.zeros.to.fit",
@@ -875,6 +879,7 @@ clanTools <- function(){
                         "first.element","last.element","most.common.element",
                         "workflow.ca",
                         "dayno.clock","dayno.calc","dayno.clock.reversed",
+                        "extract.last.part.of.string", "substring.with.dots.adv",
                         "thermistor.degC","thermistor.ohm","coefficients.ca","trim.whitespace"
        )))
 }
