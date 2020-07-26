@@ -29,7 +29,7 @@ gives the following output:
 
 "Hello .............."
 
-See also \link{table.dots}.
+See also \link{table.dots} and \link{substring.with.dots.adv}.
 }
 \author{
 Claus E. Andersen

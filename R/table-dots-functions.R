@@ -206,5 +206,5 @@ substring.with.dots.adv <- function(x,n=30,reverse=FALSE,st=".",n.last=10,mid.st
   
   return(y)
 }# substring.with.dots.adv
-##################################################################################
+
 
