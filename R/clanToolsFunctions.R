@@ -651,7 +651,7 @@ create.latex.table <-
 #' @title  Convert from wall-clock time to fraction of day
 #' @description Convert from wall-clock time to fraction of day.
 #' Note: 1) Any delimiter will do, 2) seconds are option
-#' See also: \link{dayno.calc} \link{conv.ref.date} \link{dayno.clock.reversed} \link{English.months} \link{get.date.range}
+#' See also: \link{dayno.calc} \link{conv.ref.date} \link{dayno.clock.reversed} \link{English.months} \link{get.date.range} \link{dayno.from.fileinfo}
 #' @usage  dayno.clock(c("12:00","23:59","00:00:59","12.00.30","23x30"))
 #' @name dayno.clock 
 #' @author Claus E. Andersen
@@ -673,7 +673,7 @@ dayno.clock <- function(Ttime="00:00"){
 #' @title  Calculate the difference between two time stamps
 #' @description Dates and wall-clock times are used as input. The output is in number of days .
 #' Note: 1) Any delimiter will do, 2) seconds are option
-#' See also: \link{conv.ref.date} \link{dayno.clock.reversed} \link{dayno.clock} \link{English.months} \link{get.date.range}
+#' See also: \link{conv.ref.date} \link{dayno.clock.reversed} \link{dayno.clock} \link{English.months} \link{get.date.range} \link{dayno.from.fileinfo}
 #' @usage  dayno.clock(c("12:00","23:59","00:00:59","12.00.30","23x30"))
 #' @name dayno.calc 
 #' @author Claus E. Andersen
@@ -719,6 +719,49 @@ dayno.clock.reversed <- function(Ttime = 0.5){
   mm <- round((Ttime-hh/24)*24*60)
   paste(leading.zeros(hh,2),":",leading.zeros(mm,2),sep="")
 }
+
+
+
+
+
+#' @title  Compute dayno from fileinfo output
+#' @description Calculate dayno for date output from fileinfo.
+#' The function assumes the following format of the fileinfo
+#  times: "2020-07-15 16:38:28 CEST"
+#' @usage  
+#   xx <- file.info(c("alanine-mass-001.txt"))
+#   xx.dayno <- dayno.from.fileinfo(xx$mtime) 
+#' See also: \link{dayno.calc} 
+#' @name dayno.from.fileinfo 
+#' @author Claus E. Andersen
+#' @return vector with dayno
+#' @param format select the format of the date (not implemented)
+#' @export dayno.from.fileinfo
+dayno.from.fileinfo <- function(ftime="2020-07-15 16:38:28 CEST",format=1){
+  # Created: July 27, 2020
+  # Revised: July 27, 2020
+  # Name: Claus E. Andersen
+  # The function assumes the following format of the fileinfo
+  # times: "2020-07-15 16:38:28 CEST"
+  # Sample call: 
+  #   xx <- file.info(c("alanine-mass-001.txt"))
+  #   xx.dayno <- dayno.from.fileinfo(xx$mtime)
+  xx <- ftime
+  xx.day   <- substring(xx,9,10)
+  xx.month <- substring(xx,6,7)
+  xx.year  <- substring(xx,1,4)
+  xx.hr    <- substring(xx,12,13)
+  xx.min   <- substring(xx,15,16)
+  xx.sec   <- substring(xx,18,19)
+  
+  xx.Tday <- paste(xx.day,".",xx.month,".",xx.year,sep="")
+  xx.Ttime <- paste(xx.hr,":",xx.min,":",xx.sec,sep="")
+  
+  dayno <- dayno.calc(Tday=xx.Tday,Ttime=xx.Ttime)
+  return(dayno)
+}# dayno.from.fileinfo
+#######################################################################
+
 
 #' @title  Convert from NTC to temperature using three parameters
 #' @description Conversion for NTC (e.g. 2 kohm) thermistors (Risoe parameterization)
