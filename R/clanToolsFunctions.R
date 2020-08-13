@@ -912,7 +912,7 @@ clan.install <- function(repos="http://cran.r-project.org",force=TRUE){
 #' @export session.info.ca 
  session.info.ca <- function(print.wanted = TRUE){
   
-  info.all <- session_info()
+  info.all <- devtools::session_info()
   info.platform <- info.all$platform
   df.packages <- data.frame(info.all$packages[,c("package","date","loadedversion","source")])
   
