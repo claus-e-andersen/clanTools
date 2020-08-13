@@ -934,11 +934,11 @@ clan.install <- function(repos="http://cran.r-project.org",force=TRUE){
   df.stuff
   
   if(print.wanted){
-    clanLattice::txtplot("System information (cbase)")
-    clanLattice::txtplot(df.stuff,cex=0.7,new=FALSE)
+    txtplot("System information (cbase)")
+    txtplot(df.stuff,cex=0.7,new=FALSE)
     
-    clanLattice::txtplot("Packages used by R (cbase)")
-    clanLattice::txtplot(df.packages,cex=0.6,new=FALSE)
+    txtplot("Packages used by R (cbase)")
+    txtplot(df.packages,cex=0.6,new=FALSE)
   }
   return(list(df.stuff,df.packages))
 } # end session.info.ca 
