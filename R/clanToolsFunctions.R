@@ -903,26 +903,68 @@ clan.install <- function(repos="http://cran.r-project.org",force=TRUE){
   }
 
 
-#' @title  Version function for the clanTools library
-#' @description  Version function for the clanTools library
-#' @usage  clanTools()
-#' @name clanTools 
+#' @title  Session information 
+#' @description  List main information about operating system, R, and packages
+#' @usage  session.info.ca()
+#' @name session.info.ca 
 #' @author Claus E. Andersen
-#' @return list with information about the version and the functions in the library
-#' @export 
-clanTools <- function(){
-  list(name="clanTools",
-       version=0.011,
-       date="July 26, 2020",
-       functions=sort(c("clanTools","clan.install","wrline",
-                        "replacechar","substitute.char","extract.first.number","extract.given.number",
-                        "leading.zeros","leading.zeros.to.fit",
-                        "round.resolution","round.ca","round.res","signif.res",
-                        "leading.blanks",
-                        "first.element","last.element","most.common.element",
-                        "workflow.ca",
-                        "dayno.clock","dayno.calc","dayno.clock.reversed",
-                        "extract.last.part.of.string", "substring.with.dots.adv",
-                        "thermistor.degC","thermistor.ohm","coefficients.ca","trim.whitespace"
-       )))
-}
+#' @return List with information. Printing data as a side effect.
+#' @export session.info.ca 
+ session.info.ca <- function(print.wanted = TRUE){
+  
+  info.all <- session_info()
+  info.platform <- info.all$platform
+  df.packages <- data.frame(info.all$packages[,c("package","date","loadedversion","source")])
+  
+  
+  df.stuff <-
+    rbind(
+      data.frame(item="Version",value=info.all$platform[["version"]]),
+      data.frame(item="OS",value=info.all$platform[["os"]]),
+      data.frame(item="System",value=info.all$platform[["system"]]),
+      data.frame(item="Language",value=info.all$platform[["language"]]),
+      data.frame(item="Collate",value=info.all$platform[["collate"]]),
+      data.frame(item="Ctype",value=info.all$platform[["ctype"]]),
+      data.frame(item="Time zone",value=info.all$platform[["tz"]]),
+      data.frame(item="Date",value=info.all$platform[["date"]])
+    )
+  
+  df.stuff$item<- table.dots.vec(as.character(df.stuff$item),N=25,before=!TRUE,st=".",st.space="  ")
+  df.stuff$value <- table.dots.vec(as.character(df.stuff$value),N=65,before=!TRUE,st="_",st.space="  ")
+  df.stuff
+  
+  if(print.wanted){
+    clanLattice::txtplot("System information (cbase)")
+    clanLattice::txtplot(df.stuff,cex=0.7,new=FALSE)
+    
+    clanLattice::txtplot("Packages used by R (cbase)")
+    clanLattice::txtplot(df.packages,cex=0.6,new=FALSE)
+  }
+  return(list(df.stuff,df.packages))
+} # end session.info.ca 
+
+
+ #' @title  Version function for the clanTools library
+ #' @description  Version function for the clanTools library
+ #' @usage  clanTools()
+ #' @name clanTools 
+ #' @author Claus E. Andersen
+ #' @return list with information about the version and the functions in the library
+ #' @export 
+ clanTools <- function(){
+   list(name="clanTools",
+        version=0.012,
+        date="August 13, 2020",
+        functions=sort(c("clanTools","clan.install","wrline",
+                         "replacechar","substitute.char","extract.first.number","extract.given.number",
+                         "leading.zeros","leading.zeros.to.fit",
+                         "round.resolution","round.ca","round.res","signif.res",
+                         "leading.blanks",
+                         "first.element","last.element","most.common.element",
+                         "workflow.ca",
+                         "dayno.clock","dayno.calc","dayno.clock.reversed",
+                         "extract.last.part.of.string", "substring.with.dots.adv",
+                         "thermistor.degC","thermistor.ohm","coefficients.ca","trim.whitespace",
+                         "session.info.ca"
+        )))
+ }
