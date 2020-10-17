@@ -121,3 +121,46 @@ split.filename <- function(fn="catest.txt"){
   
   return(list(drive=drive.vec,path=path.vec,name=name.vec,ext=ext.vec))
 }# split.filename
+
+
+
+############################################################################
+#' @title  dayno.from.fileinfo
+#' @description 
+#' # The function assumes the following format of the fileinfo
+#' times: "2020-07-15 16:38:28 CEST"
+#' Sample call: 
+#'   xx <- file.info(c("alanine-mass-001.txt"))
+#'   xx.dayno <- dayno.from.fileinfo(xx$mtime)
+#' @usage  none
+#' @name dayno.from.fileinfo
+#' @author Claus E. Andersen
+#' @return dayno
+#' @param ftime is the output from file.info("some-file-name").
+#' @param format is reserved for future use (currently there is only one format). 
+#' @export dayno.from.fileinfo
+dayno.from.fileinfo <- function(ftime="2020-07-15 16:38:28 CEST",format=1){
+  # Created: July 27, 2020
+  # Revised: July 27, 2020
+  # Name: Claus E. Andersen
+  # The function assumes the following format of the fileinfo
+  # times: "2020-07-15 16:38:28 CEST"
+  # Sample call: 
+  #   xx <- file.info(c("alanine-mass-001.txt"))
+  #   xx.dayno <- dayno.from.fileinfo(xx$mtime)
+  xx <- ftime
+  xx.day   <- substring(xx,9,10)
+  xx.month <- substring(xx,6,7)
+  xx.year  <- substring(xx,1,4)
+  xx.hr    <- substring(xx,12,13)
+  xx.min   <- substring(xx,15,16)
+  xx.sec   <- substring(xx,18,19)
+  
+  xx.Tday <- paste(xx.day,".",xx.month,".",xx.year,sep="")
+  xx.Ttime <- paste(xx.hr,":",xx.min,":",xx.sec,sep="")
+  
+  dayno <- dayno.calc(Tday=xx.Tday,Ttime=xx.Ttime)
+  return(dayno)
+}# dayno.from.fileinfo
+
+
