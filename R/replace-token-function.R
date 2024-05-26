@@ -27,6 +27,7 @@ replace.token <- function(txt,TOKEN.ID="TOKEN.XYZ",Replace.auto="",Replace.manua
   # txt <- "jsjdksfkd  TOKEN.CERTDATE jsfhjhfjkhjfadsk safjsfkf"
   # txt <- replace.token(txt,"TOKEN.CERTDATE","December 24, 1999")
   #
+  print(paste("replace.token: TOKEN.ID =",TOKEN.ID))
   i <- grep(TOKEN.ID,txt,value=FALSE)
   N <- length(i)
   if(is.null(Replace.manual)){
