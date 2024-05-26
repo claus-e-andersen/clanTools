@@ -55,7 +55,8 @@ resolution.uncertainty.pct <- function(x,digits=4,last.digit.step=1,min.value=0.
   x <- abs(x)
   x <- x * 1e9
   
-  ok <- !is.na(x) && x > 0 
+  ### This now gives an error (May 24, 2024): ok <- !is.na(x) && x > 0 
+  ok <- !is.na(x) & x > 0
   if(sum(ok)>0){x[ok] <- x[ok] * 10^(-trunc(log10(x))) * 1e9} 
   
   z <- rep("",length(x))
