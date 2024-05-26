@@ -30,7 +30,7 @@ replace.token <- function(txt,TOKEN.ID="TOKEN.XYZ",Replace.auto="",Replace.manua
   print(paste("1. replace.token: TOKEN.ID =",TOKEN.ID))
   print(paste("2. replace.token: Replace.auto =",Replace.auto))
   print(paste("3. replace.token: Replace.manual =",Replace.manual))
-  print(paste("4. txt:")
+  print(paste("4. txt:"))
   print(txt)
   print("text end")
   i <- grep(TOKEN.ID,txt,value=FALSE)
