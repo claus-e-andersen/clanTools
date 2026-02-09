@@ -49,24 +49,55 @@ English.months <- function(i=1){
 #' @author Claus E. Andersen
 #' @return string with human readable text.
 #' @param x vector with dates in the format "31-01-2020".
+#' @param sort.by.dayno sort by day number or not
 #' @export get.date.range
-get.date.range <- function(x){
-  xxx <- paste(unique(as.character(x)),sep=" ", collapse=" ")
-  yyy <-  unlist(strsplit(xxx,split=" "))
-  #zzz <- paste(unique(as.character(yyy)),collapse=" ", sep=" ")
-  #x <- zzz
-  x <- yyy
-  x <- unique(x)
-  x <- sort(x)
-  x1 <- first.element(x)
-  x2 <- last.element(x)
-  xx.value1 <- paste(English.months(as.numeric(substring(x1,4,5)))," ",substring(x1,1,2),", ",substring(x1,7,10),sep="")
-  xx.value2 <- paste(English.months(as.numeric(substring(x2,4,5)))," ",substring(x2,1,2),", ",substring(x2,7,10),sep="")
-  xx.value0 <- paste(xx.value1," -- ",xx.value2,"",sep="")
-  if(x1==x2){
-    xx.value0 <- paste(xx.value1," (one day only)",sep="")
-  }
-  xx.value0 
+get.date.range <- function (x, sort.by.dayno = FALSE) 
+{
+# Revised: February 6, 2026
+# sort.by.dayno = FALSE : "January 03, 2026 -- December 16, 2025"
+# sort.by.dayno = TRUE  : "December 16, 2025 -- January 04, 2026"
+
+if(sort.by.dayno){
+# This is normally what we need. 
+# We need to sort after the dayno (not the alphabeth)
+# Revised: Feb. 9, 2026
+y <- unlist(strsplit(x, split=" ", fixed = "TRUE"))
+y <- replacechar(y,'-','.')
+dayno <- dayno.calc(y)
+dfA <- data.frame(date=y,dayno=dayno)
+
+ok.min <- dfA$dayno == min(dfA$dayno,na.rm=TRUE)
+d1 <- unique(dfA$date[ok.min])
+
+ok.max<- dfA$dayno == max(dfA$dayno,na.rm=TRUE)
+d2 <- unique(dfA$date[ok.max])
+#print(paste(d1,"-",d2))
+}
+
+if(!sort.by.dayno){
+
+    xxx <- paste(unique(as.character(x)), sep = " ", collapse = " ")
+    yyy <- unlist(strsplit(xxx, split = " "))
+    x <- yyy
+    x <- unique(x)
+    x <- sort(x)
+    d1 <- first.element(x)
+    d2 <- last.element(x)
+}
+
+   x1 <- d1
+   x2 <- d2 
+   xx.value1 <- paste(English.months(as.numeric(substring(x1, 
+        4, 5))), " ", substring(x1, 1, 2), ", ", substring(x1, 
+        7, 10), sep = "")
+    xx.value2 <- paste(English.months(as.numeric(substring(x2, 
+        4, 5))), " ", substring(x2, 1, 2), ", ", substring(x2, 
+        7, 10), sep = "")
+    xx.value0 <- paste(xx.value1, " -- ", xx.value2, "", sep = "")
+    if (x1 == x2) {
+        xx.value0 <- paste(xx.value1, " (one day only)", sep = "")
+    }
+    xx.value0
 } # get.date.range
 
 
