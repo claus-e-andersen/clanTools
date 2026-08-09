@@ -50,6 +50,119 @@ result.vec
 }
 
 
+#' @title peak.fit.near.max
+#' @description Fit a polynomia to noisy data, then find the maximum
+#' @usage 
+#' peak.fit.near.max(mm.max.fit=5,poly.order=2,plot.wanted=TRUE)
+#' peak.fit.near.max(mm.max.fit=5,poly.order=3,plot.wanted=TRUE)
+#' peak.fit.near.max(mm.max.fit=5,poly.order=4,plot.wanted=TRUE)
+#' @name  peak.fit.near.max
+#' @author Claus E. Andersen
+#' @return list with x.peak, y.peak, and df.fitted (the fitted data)
+#' @param x contains the x-coordinates (vector)
+#' @param y contains the y-coordinates (vector)
+#' @param mm.max.fit specifies the x-ccodinate distance from the max that can be used for fitting.
+#' @param poly.order is the polynomium order (2, 3 or 4)
+#' @param plot.wanted is TRUE or FALSE
+#' @export peak.fit.near.max
+peak.fit.near.max <- function(
+x=seq(0,30,length=100),y=100-(seq(0,30,length=100)-10)^2+rnorm(100,mean=0,sd=2.40), 
+mm.max.fit=8, poly.order=3, plot.wanted=!TRUE){
+# Created: August 8, 2026
+# Revised: August 9, 2026
+# Name: Claus E. Andersen
+
+# Use case: For example, finding the maximum in an electron depth dose curve (PDD)
+# The maximum is needed to estimate R50.ion.
+
+# Find maximum by polynominia fitting
+# We assume there is only one true maximum.
+# We only fit to data near the single-point-maximum (i.e. the maximum individual point)
+# which may be the max point only because of random noise.
+# The polynomia fitting should average out any noise, and give us a better
+# estimate of the true maximum.
+
+# Sample calls:
+# peak.fit.near.max(mm.max.fit=5,poly.order=2,plot.wanted=TRUE)
+# peak.fit.near.max(mm.max.fit=5,poly.order=3,plot.wanted=TRUE)
+# peak.fit.near.max(mm.max.fit=5,poly.order=4,plot.wanted=TRUE)
+
+
+# Remove all NA
+ok <- !is.na(x) & !is.na(y)
+x <- x[ok]
+y <- y[ok]
+
+y.max <- max(y)
+y.halfmax <- y.max/2
+
+ok <-  y==y.max
+x.max <- mean(x[ok])
+
+ok.max.fit <- abs(x-x.max) < mm.max.fit
+
+# Selected data near the max point
+xx <- x[ok.max.fit]
+yy <- y[ok.max.fit]
+
+y.max <- NA
+
+if(poly.order==2){
+z <- xx
+z2 <- z*z
+fm.max <- lm(yy~ z+z2)
+w <- seq(min(z),max(z),length=1000)
+w2 <- w*w
+yfit <- predict(fm.max,newdata=data.frame(z=w,z2=w2))
+}
+
+if(poly.order==3){
+z <- xx
+z2 <- z*z
+z3 <- z*z*z
+fm.max <- lm(yy~ z+z2+z3)
+w <- seq(min(z),max(z),length=1000)
+w2 <- w*w
+w3 <- w*w*w
+yfit <- predict(fm.max,newdata=data.frame(z=w,z2=w2,z3=w3))
+}
+
+if(poly.order==4){
+z <- xx
+z2 <- z*z
+z3 <- z*z*z
+z4 <- z*z*z*z
+fm.max <- lm(yy~ z+z2+z3+z4)
+w <- seq(min(z),max(z),length=1000)
+w2 <- w*w
+w3 <- w*w*w
+w4 <- w*w*w*w
+yfit <- predict(fm.max,newdata=data.frame(z=w,z2=w2,z3=w3,z4=w4))
+}
+
+df.fitted <- data.frame(x=w,y=yfit)
+
+x.peak <- mean(w[yfit==max(yfit)])
+y.peak <- max(yfit)
+
+
+plt <- lattice::xyplot(y~x,data=data.frame(x=x,y=y),
+panel=function(x,y,...){
+panel.xyplot(x,y,...)
+panel.points(w,yfit,col="red",...)
+panel.abline(h=y.peak,lty="dashed")
+panel.abline(v=x.peak,lty="dashed")
+}
+)
+
+if(plot.wanted){print(plt)}
+
+return(list(x.peak=x.peak, y.peak=y.peak, df.fitted=df.fitted))
+} # peak.fit.near.max
+
+
+
+
 #' @title Find the first element in a vector
 #' @description This functions also handles NULL vectors and NA-values.
 #' @usage 
