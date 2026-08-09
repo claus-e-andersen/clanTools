@@ -19,6 +19,37 @@ coefficients.ca <- function(fm){
   return(data.frame(coeff=summary(fm)$coefficients[,1],u.coeff=summary(fm)$coefficients[,2]))
 }
 
+#' @title string.begin.end
+#' @description Take first and last of (long) string. Add ... if something is removed
+#' @usage 
+#' st <- "ksfjdkljsjlksjdfljfjj sjflf jsfj sdflsfjf "
+#' st <- string.begin.end(st,10,17) 
+#' @name  string.begin.end
+#' @author Claus E. Andersen
+#' @return A string which has a certain max length
+#' @param st xvec vector of strings
+#' @param nbegin number of characters from first part of string
+#' @param nmax max (total) number of characters in output string
+#' @export string.begin.end
+string.begin.end <- function(xvec="hjkasdkahd",nbegin=10,nmax = 55){
+# Only show begin and end of string + ... (if something is removed)
+  # Created: July 28, 2026
+  # Revised: August 9, 2026
+result.vec <- rep("",length(xvec))
+for(i in 1:length(xvec)){
+x <- xvec[i]
+n <- nchar(x)
+nend <- nmax - nbegin
+result <- if (n <= nmax) {
+x} else {
+paste0(substr(x, 1, nbegin), "...", substr(x, n - nend, n))
+}
+result.vec[i] <- result
+}
+result.vec
+}
+
+
 #' @title Find the first element in a vector
 #' @description This functions also handles NULL vectors and NA-values.
 #' @usage 
