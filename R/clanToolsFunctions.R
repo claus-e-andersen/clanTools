@@ -1100,7 +1100,7 @@ clan.install <- function(repos="http://cran.r-project.org",force=TRUE){
    list(name="clanTools",
         version=0.015,
         date="August 9, 2026",
-        functions=sort(c("string.begin.end"," peak.fit.near.max","clanTools","clan.install","wrline",
+        functions=sort(c("string.begin.end","peak.fit.near.max","clanTools","clan.install","wrline",
                          "replacechar","substitute.char","extract.first.number","extract.given.number",
                          "leading.zeros","leading.zeros.to.fit",
                          "round.resolution","round.ca","round.res","signif.res",
