@@ -62,13 +62,13 @@ result.vec
 #' @return list with x.peak, y.peak, and df.fitted (the fitted data)
 #' @param x contains the x-coordinates (vector)
 #' @param y contains the y-coordinates (vector)
-#' @param mm.max.fit specifies the x-ccodinate distance from the max that can be used for fitting.
+#' @param x.max.distance specifies the max x-distance from the max that can be used for fitting.
 #' @param poly.order is the polynomium order (2, 3 or 4)
 #' @param plot.wanted is TRUE or FALSE
 #' @export peak.fit.near.max
 peak.fit.near.max <- function(
 x=seq(0,30,length=100),y=100-(seq(0,30,length=100)-10)^2+rnorm(100,mean=0,sd=2.40), 
-mm.max.fit=8, poly.order=3, plot.wanted=!TRUE){
+x.max.distance=8, poly.order=3, plot.wanted=!TRUE){
 # Created: August 8, 2026
 # Revised: August 9, 2026
 # Name: Claus E. Andersen
@@ -100,7 +100,7 @@ y.halfmax <- y.max/2
 ok <-  y==y.max
 x.max <- mean(x[ok])
 
-ok.max.fit <- abs(x-x.max) < mm.max.fit
+ok.max.fit <- abs(x-x.max) < x.max.distance
 
 # Selected data near the max point
 xx <- x[ok.max.fit]
