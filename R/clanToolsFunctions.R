@@ -20,7 +20,8 @@ coefficients.ca <- function(fm){
 }
 
 #' @title string.begin.end
-#' @description Take first and last of (long) string. Add ... if something is removed
+#' @description Take first and last of (long) string. Add ... if something is removed 
+#' See also: substring.with.dots
 #' @usage 
 #' st <- "ksfjdkljsjlksjdfljfjj sjflf jsfj sdflsfjf "
 #' st <- string.begin.end(st,10,17) 
@@ -1097,9 +1098,9 @@ clan.install <- function(repos="http://cran.r-project.org",force=TRUE){
  #' @export 
  clanTools <- function(){
    list(name="clanTools",
-        version=0.012,
-        date="August 13, 2020",
-        functions=sort(c("clanTools","clan.install","wrline",
+        version=0.015,
+        date="August 9, 2026",
+        functions=sort(c("string.begin.end"," peak.fit.near.max","clanTools","clan.install","wrline",
                          "replacechar","substitute.char","extract.first.number","extract.given.number",
                          "leading.zeros","leading.zeros.to.fit",
                          "round.resolution","round.ca","round.res","signif.res",
